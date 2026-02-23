@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Premium VIP (+60 Cursos) - CreaCoders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --premium: #f59e0b; /* Ambar/Oro */
+            --premium-dark: #b45309;
+            --bg-dark: #0f172a; /* Fondo Oscuro VIP */
+            --bg-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; padding-bottom: 100px; }
+        .container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER VIP */
+        header {
+            background: radial-gradient(circle at top right, #1e293b 0%, var(--bg-dark) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .icon-box { width: 70px; height: 70px; background: rgba(245, 158, 11, 0.1); color: var(--premium); border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(245, 158, 11, 0.3); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.15); }
+        .badge { background: rgba(245, 158, 11, 0.2); color: var(--premium); padding: 6px 14px; border-radius: 20px; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; border: 1px solid var(--premium-dark); margin-bottom: 15px; display: inline-block; }
+        h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 12px; color: var(--white); }
+        h1 span { color: var(--premium); }
+        .hero-desc { font-size: 0.95rem; color: var(--text-muted); max-width: 90%; margin: 0 auto 30px; }
+
+        /* MAIN PRICING CARD */
+        .pricing-card { background: linear-gradient(135deg, var(--premium-dark) 0%, #78350f 100%); color: white; padding: 30px; border-radius: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); margin: 0 auto; border: 1px solid var(--premium); }
+        .pricing-card .label { font-size: 0.8rem; font-weight: 800; color: #fde68a; text-transform: uppercase; letter-spacing: 1px; }
+        .pricing-card .price { font-size: 2.8rem; font-weight: 800; line-height: 1; margin: 10px 0; }
+        .pricing-card .sub { font-size: 0.85rem; color: #fef3c7; opacity: 0.9; }
+
+        /* VALUE PROPOSITION GRID */
+        .section-title { font-size: 1.2rem; font-weight: 800; margin: 40px 0 20px; text-align: center; color: var(--white); }
+        .value-grid { display: grid; gap: 12px; margin-bottom: 40px; }
+        .value-item { background: var(--bg-card); padding: 20px; border-radius: 16px; border: 1px solid var(--border); display: flex; align-items: flex-start; gap: 16px; }
+        .value-item svg { width: 28px; height: 28px; color: var(--premium); flex-shrink: 0; }
+        .value-item h4 { font-size: 0.95rem; color: var(--white); margin-bottom: 4px; }
+        .value-item p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* DRIVE CLOUD BOX */
+        .cloud-box { background: rgba(255,255,255,0.03); border: 1px dashed var(--text-muted); padding: 20px; border-radius: 16px; text-align: center; margin-bottom: 40px; }
+        .cloud-box svg { width: 40px; height: 40px; color: var(--white); margin-bottom: 10px; opacity: 0.8; }
+        .cloud-box p { font-size: 0.85rem; color: var(--text-muted); }
+        .cloud-box strong { color: var(--premium); }
+
+        /* ACCORDION (DARK THEME) */
+        .accordion { display: grid; gap: 12px; }
+        .course-step { border: 1px solid var(--border); border-radius: 16px; background: var(--bg-card); transition: 0.2s; }
+        summary { padding: 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; color: var(--white); }
+        summary::after { content: '+'; color: var(--premium); font-size: 1.2rem; }
+        .step-content { padding: 0 20px 20px; border-top: 1px solid var(--border); margin-top: 10px; padding-top: 15px; }
+        .step-content li { display: flex; justify-content: space-between; padding: 10px 0; font-size: 0.85rem; color: var(--text-muted); border-bottom: 1px solid var(--bg-dark); }
+        .step-content li span { color: var(--premium); font-weight: 700; font-size: 0.75rem; background: rgba(245, 158, 11, 0.1); padding: 2px 8px; border-radius: 8px; }
+
+        /* BUNDLES CROSS-SELL (THE ULTIMATE UPSELL) */
+        .bundle-section { margin-top: 50px; background: var(--bg-card); padding: 30px 20px; border-radius: 24px; border: 1px solid var(--border); }
+        
+        .promo-combo { background: var(--white); color: var(--bg-dark); padding: 24px; border-radius: 16px; margin-top: 10px; }
+        .promo-tag { background: var(--bg-dark); color: var(--white); font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 8px; margin-bottom: 12px; display: inline-block; letter-spacing: 1px; }
+        .combo-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
+        .combo-row:last-child { border: none; padding-bottom: 0; }
+        .combo-name { font-weight: 800; font-size: 0.9rem; }
+        .combo-price { font-weight: 900; color: #0055ff; font-size: 1.1rem; }
+
+        /* STICKY CTA */
+        .sticky-cta { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 500px; z-index: 1000; }
+        .btn-whatsapp { background: var(--premium); color: var(--bg-dark); text-decoration: none; padding: 18px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 15px 25px rgba(245, 158, 11, 0.2); }
+        .btn-whatsapp .main { font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; gap: 8px; }
+    </style>
+</head>
+<body>
+
+  <a href="/../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #e2e8f0; color: #1a1d23; text-decoration: none; padding: 10px 16px; border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    Volver
+</a>
+
+    <header>
+        <div class="container">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 32px; height: 32px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div class="badge">Acceso Ilimitado</div>
+            <h1>Pack Premium<br><span>+60 Cursos Pro</span></h1>
+            <p class="hero-desc">La biblioteca definitiva. Desde nivel cero hasta avanzado con actualizaciones semanales gratuitas.</p>
+            
+            <div class="pricing-card">
+                <p class="label">Suscripción de por vida</p>
+                <p class="price">$15.000 COP</p>
+                <p class="sub">Pago único. Sin cargos ocultos mensuales.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <h2 class="section-title">¿Por qué este es el mejor Pack?</h2>
+        
+        <div class="value-grid">
+            <div class="value-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                <div>
+                    <h4>Actualizaciones Semanales</h4>
+                    <p>Subimos un curso nuevo cada semana. Tu biblioteca nunca dejará de crecer y no pagas más.</p>
+                </div>
+            </div>
+            <div class="value-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <div>
+                    <h4>Acceso de Por Vida</h4>
+                    <p>Olvídate de las mensualidades de las plataformas tradicionales. Paga hoy y aprende a tu ritmo para siempre.</p>
+                </div>
+            </div>
+            <div class="value-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <div>
+                    <h4>Contenido Completo</h4>
+                    <p>Videos paso a paso, documentación, ejercicios y proyectos reales listos para añadir a tu portafolio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cloud-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+            <p>Alojadamos más de <strong>100 GB de contenido premium</strong> en un servidor privado de Google Drive. Al comprar, te damos acceso directo a la nube para que descargues o veas online desde cualquier dispositivo.</p>
+        </div>
+
+        <h2 class="section-title">¿Qué incluye la biblioteca?</h2>
+        <p id="course-summary" style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;"></p>
+        <div class="accordion" id="course-accordion"></div>
+
+        <section class="bundle-section">
+            <h2 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 20px; color: white;">¿Quieres la experiencia definitiva?</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Este Pack Premium te da acceso a la biblioteca, pero si lo combinas con nuestros <strong style="color: white;">Retos Especializados (Python, Java o Web)</strong> tendrás la ruta exacta para conseguir empleo.</p>
+            
+            <div class="promo-combo">
+                <span class="promo-tag">OFERTA "MASTER ACCESS"</span>
+                
+                <div class="combo-row">
+                    <div>
+                        <span class="combo-name">Premium + Pack Python</span>
+                        <p style="font-size: 0.75rem; color: #64748b;">Ahorras $5.000</p>
+                    </div>
+                    <span class="combo-price">$20.000</span>
+                </div>
+                
+                <div class="combo-row">
+                    <div>
+                        <span class="combo-name">Premium + Pack Java</span>
+                        <p style="font-size: 0.75rem; color: #64748b;">Ahorras $5.000</p>
+                    </div>
+                    <span class="combo-price">$20.000</span>
+                </div>
+
+                <div class="combo-row">
+                    <div>
+                        <span class="combo-name">Premium + Desarrollo Web</span>
+                        <p style="font-size: 0.75rem; color: #64748b;">Ahorras $5.000</p>
+                    </div>
+                    <span class="combo-price">$20.000</span>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="/../index.html" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: none; border-bottom: 1px solid var(--border);">← Volver a ver todos los packs</a>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="sticky-cta">
+        <a href="https://wa.me/573019478430?text=Hola!%20Vengo%20de%20CreaCoders%20y%20quiero%20acceso%20al%20Pack%20Premium%20(+60%20cursos)%20por%20$15.000" class="btn-whatsapp">
+            <span style="font-size: 0.75rem; opacity: 0.9; margin-bottom: 4px; color: var(--bg-dark);">ACTUALIZACIONES SEMANALES INCLUIDAS</span>
+            <span class="main">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Obtener Acceso Ahora
+            </span>
+        </a>
+    </div>
+
+    <script>
+        async function loadContent() {
+            const accordion = document.getElementById('course-accordion');
+            const summaryText = document.getElementById('course-summary');
+            try {
+                const res = await fetch('temario-premium.json');
+                const data = await res.json();
+                summaryText.innerText = `${data.totalClases} Cursos Completos • ${data.duracionTotal}`;
+                accordion.innerHTML = data.secciones.map(sec => `
+                    <details class="course-step">
+                        <summary>
+                            <div style="display:grid">
+                                <span>${sec.titulo}</span>
+                                <small style="font-weight:500; font-size:0.75rem; color:var(--text-muted);">${sec.clasesInfo}</small>
+                            </div>
+                        </summary>
+                        <div class="step-content">
+                            <ul>
+                                ${sec.clases.map(c => `<li>${c.nombre} <span>${c.duracion}</span></li>`).join('')}
+                            </ul>
+                        </div>
+                    </details>
+                `).join('');
+            } catch (e) {
+                summaryText.innerText = "Catálogo completo disponible vía WhatsApp.";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
+</body>
+</html>

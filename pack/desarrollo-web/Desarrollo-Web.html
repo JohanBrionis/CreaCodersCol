@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web Fullstack - CreaCoders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5; /* Indigo Moderno */
+            --primary-soft: #e0e7ff;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --premium: #d97706;
+            --premium-light: #fef3c7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        
+        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding-bottom: 100px; }
+        .container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--primary-soft) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .icon-box { width: 64px; height: 64px; background: var(--primary); color: white; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 10px 15px rgba(79, 70, 229, 0.2); }
+        .badge { background: white; color: var(--primary); padding: 6px 14px; border-radius: 20px; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid var(--primary); margin-bottom: 15px; display: inline-block; }
+        h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 12px; color: var(--text-dark); }
+        h1 span { color: var(--primary); }
+        .hero-desc { font-size: 0.95rem; color: var(--text-muted); max-width: 90%; margin: 0 auto 30px; }
+
+        /* MAIN PRICING CARD */
+        .pricing-card { background: var(--text-dark); color: white; padding: 30px; border-radius: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); margin: 0 auto; }
+        .pricing-card .label { font-size: 0.8rem; font-weight: 700; color: var(--primary-soft); text-transform: uppercase; letter-spacing: 1px; }
+        .pricing-card .price { font-size: 2.8rem; font-weight: 800; line-height: 1; margin: 10px 0; }
+        .pricing-card .sub { font-size: 0.85rem; color: #94a3b8; }
+
+        /* TECH STACK GRID */
+        .section-title { font-size: 1.2rem; font-weight: 800; margin: 40px 0 20px; text-align: center; color: var(--text-dark); }
+        .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 40px; }
+        .tech-item { background: var(--bg-card); padding: 16px; border-radius: 16px; border: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+        .tech-item svg { width: 24px; height: 24px; color: var(--primary); }
+        .tech-item span { font-size: 0.85rem; font-weight: 700; }
+
+        /* EXCLUSIVITY NOTICE */
+        .exclusivity-box { background: rgba(79, 70, 229, 0.05); border: 1px dashed var(--primary); padding: 16px; border-radius: 16px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 40px; }
+        .exclusivity-box svg { width: 20px; height: 20px; color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+        .exclusivity-box p { font-size: 0.8rem; color: var(--text-dark); font-weight: 500; }
+        .exclusivity-box strong { color: var(--primary); }
+
+        /* ACCORDION */
+        .accordion { display: grid; gap: 12px; }
+        .course-step { border: 1px solid var(--border); border-radius: 16px; background: var(--bg-card); transition: 0.2s; }
+        summary { padding: 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; }
+        summary::after { content: '+'; color: var(--primary); font-size: 1.2rem; }
+        .step-content { padding: 0 20px 20px; border-top: 1px solid var(--border); margin-top: 10px; padding-top: 15px; }
+        .step-content li { display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.85rem; color: var(--text-muted); border-bottom: 1px solid var(--bg-body); }
+
+        /* BUNDLES CROSS-SELL */
+        .bundle-section { margin-top: 50px; background: var(--bg-card); padding: 30px 20px; border-radius: 24px; border: 1px solid var(--border); }
+        .bundle-card { background: var(--bg-body); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+        .bundle-info h4 { font-size: 0.95rem; font-weight: 800; margin-bottom: 4px; }
+        .bundle-info p { font-size: 0.75rem; color: var(--text-muted); }
+        .bundle-action { text-align: right; }
+        .bundle-action .price { font-weight: 800; font-size: 1.1rem; color: var(--text-dark); display: block; margin-bottom: 8px; }
+        .btn-view { font-size: 0.75rem; font-weight: 700; color: var(--text-main); border: 1px solid var(--border); padding: 6px 12px; border-radius: 8px; text-decoration: none; background: white; }
+
+        /* PROMO HIGHLIGHT */
+        .promo-combo { background: var(--text-dark); color: white; padding: 24px; border-radius: 16px; margin-top: 24px; }
+        .promo-tag { background: var(--primary); font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 8px; margin-bottom: 12px; display: inline-block; letter-spacing: 1px; }
+        .combo-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .combo-row:last-child { border: none; padding-bottom: 0; }
+        .combo-name { font-weight: 700; font-size: 0.9rem; }
+        .combo-price { font-weight: 800; color: var(--primary-soft); }
+
+        /* STICKY CTA */
+        .sticky-cta { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 500px; z-index: 1000; }
+        .btn-whatsapp { background: var(--primary); color: white; text-decoration: none; padding: 18px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 15px 25px rgba(79, 70, 229, 0.3); }
+        .btn-whatsapp .main { font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    </style>
+</head>
+<body>
+
+  <a href="/../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #e2e8f0; color: #1a1d23; text-decoration: none; padding: 10px 16px; border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    Volver
+</a>
+
+    <header>
+        <div class="container">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 32px; height: 32px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <div class="badge">Pack Especializado</div>
+            <h1>Desarrollo Web<br><span>Full Stack Pro</span></h1>
+            <p class="hero-desc">Domina Frontend y Backend. Desde HTML hasta React y Node.js con proyectos reales.</p>
+            
+            <div class="pricing-card">
+                <p class="label">Pago Único</p>
+                <p class="price">$10.000 COP</p>
+                <p class="sub">Acceso ilimitado. Sin mensualidades.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="exclusivity-box" style="margin-top: 30px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <p><strong>Cero Relleno:</strong> Este pack incluye contenido 100% exclusivo de Desarrollo Web. Si adquieres otros packs, <strong>ninguna lección se repite</strong>.</p>
+        </div>
+
+        <h2 class="section-title">Tu Stack Tecnológico</h2>
+        <div class="tech-grid">
+            <div class="tech-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                <span>HTML & CSS</span>
+            </div>
+            <div class="tech-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <span>JavaScript</span>
+            </div>
+            <div class="tech-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                <span>Bases SQL</span>
+            </div>
+            <div class="tech-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                <span>React JS</span>
+            </div>
+            <div class="tech-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                <span>Node.js</span>
+            </div>
+            <div class="tech-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                <span>Git & GitHub</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">Temario del Curso (7 Módulos)</h2>
+        <p id="course-summary" style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;"></p>
+        <div class="accordion" id="course-accordion"></div>
+
+        <section class="bundle-section">
+            <h2 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 20px;">Arma tu combo ideal</h2>
+            
+            <div class="bundle-card">
+                <div class="bundle-info">
+                    <h4>Pack Python</h4>
+                    <p>IA y Lógica Pura</p>
+                </div>
+                <div class="bundle-action">
+                    <span class="price">$10.000</span>
+                    <a href="../python/Python.html" class="btn-view">Ver curso</a>
+                </div>
+            </div>
+
+            <div class="bundle-card">
+                <div class="bundle-info">
+                    <h4>Pack Java</h4>
+                    <p>Entrevistas y SpringBoot</p>
+                </div>
+                <div class="bundle-action">
+                    <span class="price">$10.000</span>
+                    <a href="../java/Java.html" class="btn-view">Ver curso</a>
+                </div>
+            </div>
+
+            <div class="bundle-card" style="border-color: var(--premium); background: var(--premium-light);">
+                <div class="bundle-info">
+                    <h4 style="color: var(--premium);">Pack Premium (+60)</h4>
+                    <p>Toda la biblioteca</p>
+                </div>
+                <div class="bundle-action">
+                    <span class="price" style="color: var(--premium);">$15.000</span>
+                    <a href="../premium/Pack-Premium.html" class="btn-view" style="border-color: var(--premium); color: var(--premium);">Ver curso</a>
+                </div>
+            </div>
+
+            <div class="promo-combo">
+                <span class="promo-tag">DESCUENTOS POR CANTIDAD</span>
+                <div class="combo-row">
+                    <div>
+                        <span class="combo-name">Web + (Python o Java)</span>
+                        <p style="font-size: 0.75rem; color: #94a3b8;">Lleva 2 Packs</p>
+                    </div>
+                    <span class="combo-price">$16.000</span>
+                </div>
+                <div class="combo-row">
+                    <div>
+                        <span class="combo-name">Web + Pack Premium</span>
+                        <p style="font-size: 0.75rem; color: #94a3b8;">Máximo valor</p>
+                    </div>
+                    <span class="combo-price" style="color: white;">$20.000</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="sticky-cta">
+        <a href="https://wa.me/573019478430?text=Hola!%20Vengo%20de%20CreaCoders%20y%20quiero%20el%20Pack%20Web%20Fullstack%20por%20$10.000" class="btn-whatsapp">
+            <span style="font-size: 0.75rem; opacity: 0.9; margin-bottom: 4px;">PAGO ÚNICO - COLOMBIA</span>
+            <span class="main">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Comprar por WhatsApp
+            </span>
+        </a>
+    </div>
+
+    <script>
+        async function loadContent() {
+            const accordion = document.getElementById('course-accordion');
+            const summaryText = document.getElementById('course-summary');
+            try {
+                // Asegúrate de que este archivo exista en la carpeta desarrollo-web
+                const res = await fetch('temario-web.json');
+                const data = await res.json();
+                summaryText.innerText = `${data.totalSecciones} Módulos • ${data.totalClases} Clases • ${data.duracionTotal}`;
+                accordion.innerHTML = data.secciones.map(sec => `
+                    <details class="course-step">
+                        <summary>
+                            <div style="display:grid">
+                                <span>${sec.titulo}</span>
+                                <small style="font-weight:500; font-size:0.75rem; color:var(--text-muted);">${sec.clasesInfo}</small>
+                            </div>
+                        </summary>
+                        <div class="step-content">
+                            <ul>
+                                ${sec.clases.map(c => `<li>${c.nombre} <span style="font-weight:700; color:var(--text-dark);">${c.duracion}</span></li>`).join('')}
+                            </ul>
+                        </div>
+                    </details>
+                `).join('');
+            } catch (e) {
+                summaryText.innerText = "Temario disponible vía WhatsApp.";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
+</body>
+</html>

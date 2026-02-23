@@ -1,0 +1,82 @@
+{
+  "totalSecciones": 6,
+  "totalClases": "+60 Cursos",
+  "duracionTotal": "+100 GB en Google Drive",
+  "secciones": [
+    {
+      "titulo": "🎨 Frontend, UI/UX y CMS",
+      "clasesInfo": "Diseño y Maquetación Web",
+      "clases": [
+        { "nombre": "HTML Definitivo", "duracion": "Básico" },
+        { "nombre": "CSS Definitivo", "duracion": "Básico" },
+        { "nombre": "JavaScript Definitivo", "duracion": "Básico" },
+        { "nombre": "Framework React.js", "duracion": "Avanzado" },
+        { "nombre": "Framework Angular", "duracion": "Avanzado" },
+        { "nombre": "Framework Svelte", "duracion": "Avanzado" },
+        { "nombre": "Framework Astro", "duracion": "Avanzado" },
+        { "nombre": "Diseño UI/UX desde Cero", "duracion": "Pro" },
+        { "nombre": "Estilos con Tailwind", "duracion": "Pro" },
+        { "nombre": "Estilos con Bootstrap y CSS Grid", "duracion": "Pro" },
+        { "nombre": "CMS: WordPress 2024", "duracion": "Pro" },
+        { "nombre": "CMS: Elementor PRO", "duracion": "Pro" }
+      ]
+    },
+    {
+      "titulo": "⚙️ Backend y Arquitectura",
+      "clasesInfo": "Lógica de Servidores",
+      "clases": [
+        { "nombre": "Ecosistema JS: NodeJS", "duracion": "Backend" },
+        { "nombre": "Manipulación del DOM", "duracion": "Backend" },
+        { "nombre": "PHP: Desde Cero", "duracion": "Fullstack" },
+        { "nombre": "Laravel Full Stack con VueJS", "duracion": "Fullstack" },
+        { "nombre": "C#: Programador Experto en 28 días", "duracion": "Avanzado" },
+        { "nombre": ".NET Core: Programador Experto", "duracion": "Avanzado" },
+        { "nombre": "Arquitectura con Ruby on Rails", "duracion": "Arquitectura" },
+        { "nombre": "Microservicios con Spring Boot", "duracion": "Arquitectura" }
+      ]
+    },
+    {
+      "titulo": "🗄️ Bases de Datos y Herramientas",
+      "clasesInfo": "Almacenamiento y Testing",
+      "clases": [
+        { "nombre": "Bases de Datos: SQL desde cero a avanzado", "duracion": "DB" },
+        { "nombre": "Bases de Datos: MySQL desde cero a avanzado", "duracion": "DB" },
+        { "nombre": "Herramientas de API: Postman", "duracion": "Tools" },
+        { "nombre": "Testing: Pruebas Unitarias con Jest", "duracion": "QA" },
+        { "nombre": "Testing aplicado en Angular", "duracion": "QA" }
+      ]
+    },
+    {
+      "titulo": "🧠 Inteligencia Artificial y Data Science",
+      "clasesInfo": "El Futuro Tech",
+      "clases": [
+        { "nombre": "Python para Ciencia de Datos", "duracion": "Data" },
+        { "nombre": "Python para Desarrollo Avanzado", "duracion": "Data" },
+        { "nombre": "IA: Machine Learning", "duracion": "IA" },
+        { "nombre": "IA: Redes Neuronales", "duracion": "IA" },
+        { "nombre": "IA: Deep Learning", "duracion": "IA" },
+        { "nombre": "Análisis: Power BI desde Cero", "duracion": "Analytics" },
+        { "nombre": "Análisis: R-Studio desde Cero", "duracion": "Analytics" }
+      ]
+    },
+    {
+      "titulo": "📱 Desarrollo Móvil",
+      "clasesInfo": "Apps Nativas e Híbridas",
+      "clases": [
+        { "nombre": "Kotlin en Español para Android Profesional", "duracion": "Nativo" },
+        { "nombre": "Fundamentos de Flutter", "duracion": "Híbrido" }
+      ]
+    },
+    {
+      "titulo": "🛠️ Fundamentos y Control de Versiones",
+      "clasesInfo": "Bases del Programador",
+      "clases": [
+        { "nombre": "Lógica de Programación", "duracion": "Básico" },
+        { "nombre": "Rasgos y Nociones Básicas del Programador", "duracion": "Básico" },
+        { "nombre": "Lenguaje C: De Cero a Experto", "duracion": "Bases" },
+        { "nombre": "Control de Versiones: Git Básico a Pro", "duracion": "Esencial" },
+        { "nombre": "Control de Versiones: GitHub Básico a Pro", "duracion": "Esencial" }
+      ]
+    }
+  ]
+}

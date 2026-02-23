@@ -1,0 +1,264 @@
+{
+  "totalSecciones": 33,
+  "totalClases": 231,
+  "duracionTotal": "28 h 1 m",
+  "secciones": [
+    {
+      "titulo": "Bienvenida al Curso",
+      "clasesInfo": "1 clase • 6 min",
+      "clases": [
+        { "nombre": "Recomendaciones para una mejor experiencia en el curso", "duracion": "5:36" }
+      ]
+    },
+    {
+      "titulo": "Preparar el Entorno de Trabajo",
+      "clasesInfo": "4 clases • 28 min",
+      "clases": [
+        { "nombre": "Instalar Python 3.10", "duracion": "5:49" },
+        { "nombre": "Instalar Visual Studio Code", "duracion": "4:42" },
+        { "nombre": "Extensiones para Visual Studio Code", "duracion": "8:44" },
+        { "nombre": "Ejecución a Archivos", "duracion": "9:10" }
+      ]
+    },
+    {
+      "titulo": "Primeros Pasos",
+      "clasesInfo": "6 clases • 50 min",
+      "clases": [
+        { "nombre": "Hola Mundo", "duracion": "7:05" },
+        { "nombre": "Variables y Tipos de Datos (Teoría)", "duracion": "10:09" },
+        { "nombre": "Variables y Tipos de Datos", "duracion": "6:56" },
+        { "nombre": "Reglas y Consejos para las Variables", "duracion": "10:05" },
+        { "nombre": "Variables y \"Constantes\"", "duracion": "7:51" },
+        { "nombre": "Comentarios y Asignación Múltiple de Variables", "duracion": "7:49" }
+      ]
+    },
+    {
+      "titulo": "Operadores Aritméticos",
+      "clasesInfo": "8 clases • 1 h 7 min",
+      "clases": [
+        { "nombre": "Números", "duracion": "7:09" },
+        { "nombre": "Operadores Aritméticos y Jerarquía de Operaciones (Teoría)", "duracion": "10:10" },
+        { "nombre": "Operadores Aritméticos", "duracion": "10:05" },
+        { "nombre": "Operadores Aritméticos con Variables", "duracion": "7:31" },
+        { "nombre": "Jerarquía de Operaciones", "duracion": "8:12" },
+        { "nombre": "Ejercicios", "duracion": "0:33" },
+        { "nombre": "Ejercicio 1", "duracion": "11:46" },
+        { "nombre": "Ejercicio 2", "duracion": "11:57" }
+      ]
+    },
+    {
+      "titulo": "Cadenas de Texto",
+      "clasesInfo": "7 clases • 1 h 1 min",
+      "clases": [
+        { "nombre": "Cadenas de Texto (Teoría)", "duracion": "9:00" },
+        { "nombre": "Cadenas de Texto", "duracion": "11:22" },
+        { "nombre": "Cadenas de Texto Parte 2", "duracion": "8:20" },
+        { "nombre": "Debanado de Cadenas", "duracion": "11:06" },
+        { "nombre": "Métodos de Cadenas", "duracion": "7:37" },
+        { "nombre": "Ejercicios", "duracion": "0:20" },
+        { "nombre": "Ejercicio 1", "duracion": "13:05" }
+      ]
+    },
+    {
+      "titulo": "Entrada por Teclado y Salida por Pantalla",
+      "clasesInfo": "8 clases • 59 min",
+      "clases": [
+        { "nombre": "Entrada por Teclado", "duracion": "9:04" },
+        { "nombre": "Ejercicios", "duracion": "0:29" },
+        { "nombre": "Ejercicio 1", "duracion": "17:56" },
+        { "nombre": "Ejercicio 2", "duracion": "11:47" },
+        { "nombre": "Mostrar Datos por Pantalla", "duracion": "7:43" },
+        { "nombre": "Ejercicios", "duracion": "0:16" },
+        { "nombre": "Ejercicio 3", "duracion": "5:50" },
+        { "nombre": "Ejercicio 4", "duracion": "5:52" }
+      ]
+    },
+    {
+      "titulo": "Booleanos",
+      "clasesInfo": "5 clases • 41 min",
+      "clases": [
+        { "nombre": "Booleano", "duracion": "3:55" },
+        { "nombre": "Operadores Relacionales y Lógicos (Teoría)", "duracion": "13:25" },
+        { "nombre": "Operadores Relacionales", "duracion": "9:49" },
+        { "nombre": "Operadores Lógicos", "duracion": "7:37" },
+        { "nombre": "Métodos Booleanos", "duracion": "6:00" }
+      ]
+    },
+    {
+      "titulo": "Condicionales",
+      "clasesInfo": "10 clases • 1 h 17 min",
+      "clases": [
+        { "nombre": "If, Else y Elif (Teoría)", "duracion": "7:25" },
+        { "nombre": "If y Else", "duracion": "9:09" },
+        { "nombre": "Elif", "duracion": "9:13" },
+        { "nombre": "Condicionales Anidados", "duracion": "7:00" },
+        { "nombre": "Ejercicios", "duracion": "0:19" },
+        { "nombre": "Ejercicio 1", "duracion": "12:47" },
+        { "nombre": "Ejercicio 2", "duracion": "10:41" },
+        { "nombre": "Ejercicios", "duracion": "0:35" },
+        { "nombre": "Ejercicio 3", "duracion": "11:47" },
+        { "nombre": "Ejercicio 4", "duracion": "8:21" }
+      ]
+    },
+    {
+      "titulo": "Teoría de Estructuras de Datos",
+      "clasesInfo": "1 clase • 8 min",
+      "clases": [
+        { "nombre": "Listas, Tuplas y Diccionarios (Teoría)", "duracion": "7:33" }
+      ]
+    },
+    {
+      "titulo": "Estructuras de Datos: Listas",
+      "clasesInfo": "9 clases • 1 h 2 min",
+      "clases": [
+        { "nombre": "Listas", "duracion": "7:00" },
+        { "nombre": "Debanado de Listas", "duracion": "7:31" },
+        { "nombre": "Métodos de Listas", "duracion": "7:37" },
+        { "nombre": "Métodos de Listas Parte 2", "duracion": "7:22" },
+        { "nombre": "Métodos de Listas Parte 3", "duracion": "7:18" },
+        { "nombre": "Llenar una Lista Vacía", "duracion": "7:30" },
+        { "nombre": "Ejercicios", "duracion": "0:20" },
+        { "nombre": "Ejercicio 1", "duracion": "10:27" },
+        { "nombre": "Ejercicio 2", "duracion": "6:55" }
+      ]
+    },
+    {
+      "titulo": "Estructuras de Datos: Diccionarios",
+      "clasesInfo": "6 clases • 48 min",
+      "clases": [
+        { "nombre": "Diccionarios", "duracion": "6:11" },
+        { "nombre": "Trabajar con Diccionarios", "duracion": "7:49" },
+        { "nombre": "Métodos de Diccionarios", "duracion": "11:43" },
+        { "nombre": "Ejercicios", "duracion": "0:32" },
+        { "nombre": "Ejercicio 1", "duracion": "15:06" },
+        { "nombre": "Ejercicio 2", "duracion": "6:26" }
+      ]
+    },
+    {
+      "titulo": "Otras Estructuras de Datos",
+      "clasesInfo": "5 clases • 30 min",
+      "clases": [
+        { "nombre": "Conjuntos", "duracion": "7:16" },
+        { "nombre": "Métodos de los Conjuntos", "duracion": "8:08" },
+        { "nombre": "Tuplas", "duracion": "7:11" },
+        { "nombre": "Ejercicios", "duracion": "0:14" },
+        { "nombre": "Resolución de Ejercicio", "duracion": "7:14" }
+      ]
+    },
+    {
+      "titulo": "Bucles",
+      "clasesInfo": "11 clases • 1 h 19 min",
+      "clases": [
+        { "nombre": "Bucles (Teoría)", "duracion": "8:55" },
+        { "nombre": "While", "duracion": "10:40" },
+        { "nombre": "Ejercicios", "duracion": "0:10" },
+        { "nombre": "Ejercicio 1", "duracion": "11:04" },
+        { "nombre": "Ejercicio 2", "duracion": "8:07" },
+        { "nombre": "For", "duracion": "9:34" },
+        { "nombre": "Función Range", "duracion": "7:42" },
+        { "nombre": "Continue y Break", "duracion": "8:25" },
+        { "nombre": "Ejercicios", "duracion": "0:12" },
+        { "nombre": "Resolución de Ejercicio 3", "duracion": "7:00" }
+      ]
+    },
+    {
+      "titulo": "Funciones",
+      "clasesInfo": "17 clases • 2 h",
+      "clases": [
+        { "nombre": "Funciones (Teoría)", "duracion": "5:04" },
+        { "nombre": "Funciones Integradas de Python", "duracion": "6:08" },
+        { "nombre": "Funciones", "duracion": "9:11" },
+        { "nombre": "Ejercicios", "duracion": "0:14" },
+        { "nombre": "Ejercicio 1", "duracion": "12:22" },
+        { "nombre": "Ejercicio 2", "duracion": "13:26" },
+        { "nombre": "Funciones Matemáticas", "duracion": "10:11" },
+        { "nombre": "Return de Funciones", "duracion": "9:41" },
+        { "nombre": "Ejercicios", "duracion": "0:22" },
+        { "nombre": "Ejercicio 3", "duracion": "6:45" },
+        { "nombre": "Ejercicio 4", "duracion": "12:00" },
+        { "nombre": "Parámetros y Argumentos", "duracion": "7:56" },
+        { "nombre": "Variables Globales", "duracion": "9:17" },
+        { "nombre": "Argumentos Indefinidos", "duracion": "5:38" },
+        { "nombre": "Ejercicios", "duracion": "0:12" },
+        { "nombre": "Resolución de Ejercicio 5", "duracion": "7:01" },
+        { "nombre": "Resolución de Ejercicio 6", "duracion": "4:49" }
+      ]
+    },
+    {
+      "titulo": "Manejo de Errores",
+      "clasesInfo": "2 clases • 11 min",
+      "clases": [
+        { "nombre": "Errores y Excepciones", "duracion": "7:03" },
+        { "nombre": "Excepciones Múltiples", "duracion": "4:12" }
+      ]
+    },
+    {
+      "titulo": "Programación Orientada a Objetos",
+      "clasesInfo": "7 clases • 1 h 10 min",
+      "clases": [
+        { "nombre": "Clases y Objetos (Teoría)", "duracion": "6:10" },
+        { "nombre": "Clases y Objetos", "duracion": "10:19" },
+        { "nombre": "Atributos y Métodos (Teoría)", "duracion": "5:34" },
+        { "nombre": "Atributos y Métodos", "duracion": "11:38" },
+        { "nombre": "Self e Init", "duracion": "14:43" },
+        { "nombre": "Métodos Especiales", "duracion": "10:54" },
+        { "nombre": "Profundizando en POO", "duracion": "10:31" }
+      ]
+    },
+    {
+      "titulo": "Pilares de POO",
+      "clasesInfo": "8 clases • 1 h 12 min",
+      "clases": [
+        { "nombre": "Encapsulamiento", "duracion": "11:17" },
+        { "nombre": "Más Sobre Encapsulamiento", "duracion": "9:01" },
+        { "nombre": "Método Get", "duracion": "9:12" },
+        { "nombre": "Método Set", "duracion": "9:47" },
+        { "nombre": "Herencia", "duracion": "9:17" },
+        { "nombre": "Más Sobre Herencia", "duracion": "7:05" },
+        { "nombre": "Herencia Múltiple", "duracion": "5:40" },
+        { "nombre": "Polimorfismo", "duracion": "10:32" }
+      ]
+    },
+    {
+      "titulo": "Ejercicios de POO",
+      "clasesInfo": "10 clases • 49 min",
+      "clases": [
+        { "nombre": "Ejercicio", "duracion": "0:11" },
+        { "nombre": "Ejercicio 1", "duracion": "12:04" },
+        { "nombre": "Ejercicio", "duracion": "0:10" },
+        { "nombre": "Ejercicio 2", "duracion": "14:50" },
+        { "nombre": "Ejercicio", "duracion": "0:14" },
+        { "nombre": "Ejercicio 3", "duracion": "7:46" },
+        { "nombre": "Ejercicio", "duracion": "0:15" }
+      ]
+    },
+    {
+      "titulo": "Selenium Web Driver con Python",
+      "clasesInfo": "22 clases • 3 h 18 min",
+      "clases": [
+        { "nombre": "¿Qué es Selenium Web Driver?", "duracion": "7:32" },
+        { "nombre": "Instalar PyCharm", "duracion": "8:23" },
+        { "nombre": "Instalar Selenium en PyCharm", "duracion": "4:01" },
+        { "nombre": "Instalación de Drivers para Selenium", "duracion": "7:27" },
+        { "nombre": "Inspección al Entorno de Testing", "duracion": "4:29" },
+        { "nombre": "Creando el Primer Script de Automatización", "duracion": "11:08" },
+        { "nombre": "Antes de Comenzar...", "duracion": "4:55" },
+        { "nombre": "Accediendo al Login por medio de ID", "duracion": "14:19" },
+        { "nombre": "Accediendo al Login por medio de Name", "duracion": "10:54" },
+        { "nombre": "Accediendo al Login por medio de Class", "duracion": "11:46" },
+        { "nombre": "Recuperar Cuenta por medio de Link", "duracion": "9:01" },
+        { "nombre": "Recuperar Cuenta por medio de Partial Link", "duracion": "9:30" },
+        { "nombre": "Acceder por Medio de una Sintaxis Diferente", "duracion": "15:33" },
+        { "nombre": "XPATH", "duracion": "3:41" },
+        { "nombre": "Instalar Chropath", "duracion": "4:22" },
+        { "nombre": "¿Cómo Utilizar Chropath?", "duracion": "7:23" },
+        { "nombre": "Accediendo al Login por medio de ChroPath y Xpath", "duracion": "10:06" },
+        { "nombre": "Accediendo al Login por medio de Ruta Absoluta", "duracion": "7:02" },
+        { "nombre": "Accediendo con Atributos CSS", "duracion": "11:18" },
+        { "nombre": "Accediendo con ID y Atributos CSS", "duracion": "13:17" },
+        { "nombre": "Accediendo con Class y Atributos CSS", "duracion": "13:29" },
+        { "nombre": "Seleccionar Varios Elementos", "duracion": "8:46" }
+      ]
+    }
+  ]
+}

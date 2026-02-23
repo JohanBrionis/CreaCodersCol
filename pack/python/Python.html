@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Practicando - De 0 a Desarrollador | CreaCoders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-soft: #e5f0ff;
+            --secondary: #ffd43b;
+            --bg: #ffffff;
+            --bg-soft: #f8f9fb;
+            --text-main: #1a1d23;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        body { 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            padding-bottom: 160px;
+        }
+
+        .container { max-width: 650px; margin: 0 auto; padding: 0 24px; }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 0 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--primary-soft) 0%, #ffffff 100%);
+        }
+
+        .logo-area img { width: 70px; margin-bottom: 20px; }
+
+        .badge-promo { 
+            background: #ffffff; color: var(--primary); padding: 8px 16px; 
+            border-radius: 100px; font-weight: 700; font-size: 0.75rem; 
+            display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; }
+        h1 span { color: var(--primary); }
+
+        .hero-desc { color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto 40px; }
+
+        /* MAIN OFFER CARD */
+        .offer-card { 
+            background: #ffffff; padding: 32px; border-radius: 24px; 
+            border: 1px solid var(--border); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
+            margin: 0 auto 40px;
+        }
+        .price-tag { font-size: 3rem; font-weight: 800; display: block; letter-spacing: -1px; }
+        .price-label { color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+
+        /* INSTRUCTORS & CONTENT */
+        .section-title { font-size: 1.5rem; font-weight: 800; margin: 40px 0 24px; text-align: center; }
+        .instructor-item {
+            background: var(--bg-soft); padding: 20px; border-radius: 16px; 
+            margin-bottom: 12px; border: 1px solid var(--border);
+        }
+
+        .accordion { display: grid; gap: 12px; }
+        .course-step { border: 1px solid var(--border); border-radius: 16px; background: #ffffff; }
+        summary { padding: 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        summary::after { content: '+'; color: var(--primary); font-size: 1.2rem; }
+        .step-content { padding: 0 20px 20px; border-top: 1px solid var(--bg-soft); }
+        .step-content li { display: flex; justify-content: space-between; padding: 10px 0; font-size: 0.85rem; color: var(--text-muted); border-bottom: 1px solid var(--bg-soft); }
+
+        /* OTROS PACKS STYLES */
+        .other-packs-grid { display: grid; gap: 16px; margin-top: 20px; }
+        .pack-card {
+            background: #ffffff; border: 1px solid var(--border);
+            padding: 20px; border-radius: 20px; display: flex; flex-direction: column; gap: 12px;
+        }
+        .pack-tag { font-size: 0.7rem; font-weight: 800; color: var(--primary); text-transform: uppercase; }
+        .pack-price { font-weight: 800; font-size: 1.2rem; }
+        .btn-outline {
+            text-decoration: none; border: 1px solid var(--primary); color: var(--primary);
+            padding: 8px; border-radius: 10px; text-align: center; font-size: 0.85rem; font-weight: 700;
+        }
+
+        /* PROMO BOX */
+        .promo-box {
+            background: var(--primary); color: white; padding: 30px; 
+            border-radius: 24px; text-align: center; margin-top: 40px;
+        }
+
+        /* STICKY CTA */
+        .sticky-cta {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+            width: calc(100% - 48px); max-width: 500px; z-index: 1000;
+        }
+        .urgency-badge { background: #ff4d4d; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; margin-bottom: 8px; display: inline-block; }
+        .btn-whatsapp {
+            background: #1a1d23; color: white; text-decoration: none; padding: 18px; 
+            border-radius: 20px; display: flex; flex-direction: column; align-items: center;
+            box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="/../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #e2e8f0; color: #1a1d23; text-decoration: none; padding: 10px 16px; border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    Volver
+</a>
+
+    <header class="hero">
+        <div class="container">
+            <div class="logo-area">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
+            </div>
+            <div class="badge-promo">Pago único de por vida</div>
+            <h1>Aprende Python.<br><span>De 0 a Desarrollador.</span></h1>
+            <p class="hero-desc">Domina el lenguaje de la IA con el método práctico de CreaCoders. Sin mensualidades.</p>
+            
+            <div class="offer-card">
+                <span class="price-label">Precio Especial</span>
+                <span class="price-tag">$10.000 COP</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h3 class="section-title">Instructores Expertos</h3>
+        <div class="instructor-item">
+            <h4>Álvaro Chirou</h4>
+            <p>+20 años en Tech. Disertante OWASP y profesor de +500k alumnos en Udemy.</p>
+        </div>
+        <div class="instructor-item">
+            <h4>Walter Coto</h4>
+            <p>Especialista en formación técnica y desarrollo de software profesional.</p>
+        </div>
+
+        <h3 class="section-title">Contenido del programa</h3>
+        <p id="course-summary" style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;"></p>
+        <div class="accordion" id="course-accordion"></div>
+
+        <h3 class="section-title" style="margin-top: 60px;">Te podría interesar</h3>
+        <div class="other-packs-grid">
+            <div class="pack-card">
+                <span class="pack-tag">Más vendido</span>
+                <h4 style="font-size: 1rem;">Desarrollo Web Fullstack</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">HTML, CSS, JS, Node y Base de Datos.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                    <span class="pack-price">$10.000</span>
+                    <a href="/pack/desarrollo-web/Desarrollo-Web.html" class="btn-outline">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="pack-card">
+                <span class="pack-tag">Laboral</span>
+                <h4 style="font-size: 1rem;">Java en 37 Días</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">De 0 a Pro con prácticas de entrevistas.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                    <span class="pack-price">$10.000</span>
+                    <a href="/pack/java/Java.html" class="btn-outline">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="pack-card" style="border: 2px solid var(--secondary);">
+                <span class="pack-tag" style="color: #b45309;">Recomendado ⭐</span>
+                <h4 style="font-size: 1rem;">Pack Premium (+60 Cursos)</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Toda la biblioteca de programación.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                    <span class="pack-price">$15.000</span>
+                    <a href="/pack/premium/Pack-Premium.html" class="btn-outline" style="background: var(--secondary); border: none; color: black;">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="promo-box">
+            <h4 style="margin-bottom: 10px;">🚀 ¡SUPER COMBOS!</h4>
+            <div style="display: grid; gap: 10px;">
+                <p style="font-size: 0.9rem;">Lleva <b>2 Packs</b> (Web o Java) por solo <b>$16.000</b></p>
+                <div style="height: 1px; background: rgba(255,255,255,0.2); margin: 5px 0;"></div>
+                <p style="font-size: 0.9rem;">Python + Pack Premium (+60 Cursos) por <b>$20.000</b></p>
+            </div>
+        </div>
+    </main>
+
+    <div class="sticky-cta">
+        <div style="text-align: center;"><div class="urgency-badge">OFERTA POR TIEMPO LIMITADO</div></div>
+        <a href="https://wa.me/573019478430?text=Hola!%20Quiero%20aprovechar%20la%20promocion%20de%20los%20Packs" class="btn-whatsapp">
+            <span style="font-size: 0.7rem; opacity: 0.8; margin-bottom: 4px;">PAGO ÚNICO - COLOMBIA</span>
+            <span class="main">Comprar por WhatsApp →</span>
+        </a>
+    </div>
+
+    <script>
+        async function loadContent() {
+            const accordion = document.getElementById('course-accordion');
+            const summaryText = document.getElementById('course-summary');
+            try {
+                const res = await fetch('temario.json');
+                const data = await res.json();
+                summaryText.innerText = `${data.totalSecciones} Módulos • ${data.totalClases} Clases • ${data.duracionTotal}`;
+                accordion.innerHTML = data.secciones.map(sec => `
+                    <details class="course-step">
+                        <summary>
+                            <div style="display:grid">
+                                <span>${sec.titulo}</span>
+                                <small style="font-weight:400; font-size:0.75rem; color:var(--text-muted);">${sec.clasesInfo}</small>
+                            </div>
+                        </summary>
+                        <div class="step-content">
+                            <ul>
+                                ${sec.clases.map(c => `<li>${c.nombre} <span>${c.duracion}</span></li>`).join('')}
+                            </ul>
+                        </div>
+                    </details>
+                `).join('');
+            } catch (e) {
+                summaryText.innerText = "Temario disponible en WhatsApp.";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
+</body>
+</html>

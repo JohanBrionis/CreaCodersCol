@@ -1,0 +1,433 @@
+{
+  "totalSecciones": 41,
+  "totalClases": 179,
+  "duracionTotal": "30,5 horas",
+  "secciones": [
+    {
+      "titulo": "Sobre el curso",
+      "clasesInfo": "2 clases • 12 min",
+      "clases": [
+        { "nombre": "Descubre si es para ti el curso y consejos para una mejor experiencia", "duracion": "08:30" },
+        { "nombre": "Recuerda que cuentas con nuestro asesoramiento y respuestas a tus preguntas", "duracion": "3:10" }
+      ]
+    },
+    {
+      "titulo": "Libro del curso",
+      "clasesInfo": "1 clase • 3 min",
+      "clases": [
+        { "nombre": "Como usar el libro y su utilidad", "duracion": "3:00" }
+      ]
+    },
+     {
+      "titulo": "Dia 1: Instalacion de herramientas",
+      "clasesInfo": "3 clase • 26 min",
+      "clases": [
+        { "nombre": "Instalación de JDK Java", "duracion": "5:56" },
+        { "nombre": "Instalación de NetBeans", "duracion": "7:40" },
+        { "nombre": "Recorrido por NetBeans", "duracion": "12:48" }
+      ]
+    },
+     {
+      "titulo": "Dia 2: Conozcamos de java",
+      "clasesInfo": "1 clase • 7 min",
+      "clases": [
+        { "nombre": "¿Que es java?", "duracion": "7:29" }
+      ]
+    },
+     {
+      "titulo": "Dia 3: Primeros pasos con Java",
+      "clasesInfo": "6 clase • 1 h 10 min",
+      "clases": [
+        { "nombre": "Hola mundo", "duracion": "10:41" },
+        { "nombre": "Variables y tipos de datos (Teoria)", "duracion": "10:09" },
+        { "nombre": "Variables y tipos de datos", "duracion": "10:09" },
+        { "nombre": "Comentarios en Java", "duracion": "9:03" },
+        { "nombre": "Reglas y consejos para declarar variables", "duracion": "14:37" },
+        { "nombre": "Constantes", "duracion": "13:00" }
+        
+      ]
+    },
+     {
+      "titulo": "Dia 4: Operadores aritemticos",
+      "clasesInfo": "7 clase • 1 h 5 min",
+      "clases": [
+        { "nombre": "Numeros", "duracion": "12:15" },
+        { "nombre": "Operadores aritmeticos y jerarquia de operaciones", "duracion": "10:10" },
+        { "nombre": "Operadores aritmeticos", "duracion": "10:44" },
+        { "nombre": "Jerarquia de operaciones", "duracion": "11:53" },
+        { "nombre": "Ejercicios", "duracion": "0:18" },
+        { "nombre": "Ejercicio 1", "duracion": "10:55" },
+        { "nombre": "Ejercicio 2", "duracion": "8:22" }
+      ]
+    },
+     {
+      "titulo": "Dia 5: Cadenas de texto",
+      "clasesInfo": "7 clase • 59 min",
+      "clases": [
+        { "nombre": "Cadena de texto (teoria)", "duracion": "9:00" },
+        { "nombre": "Cadena de texto", "duracion": "9:53" },
+        { "nombre": "Debanando de cadenas", "duracion": "11:34" },
+        { "nombre": "Metodos de cadenas", "duracion": "11:54" },
+        { "nombre": "Ejercicios", "duracion": "0:17" },
+        { "nombre": "Ejercicios 1", "duracion": "9:17" },
+        { "nombre": "Ejercicios 2", "duracion": "7:26" }
+      ]
+    },
+     {
+      "titulo": "Dia 6: Toma de datos del usuario",
+      "clasesInfo": "3 clase • 26 min",
+      "clases": [
+        { "nombre": "Tomando datos del usuario usando Scanner", "duracion": "9:00" },
+        { "nombre": "Segundo ejemplo usando la libreria Scanner", "duracion": "9:27" },
+        { "nombre": "Usando JOptions para pedir datos al usuario", "duracion": "7:41" }
+      ]
+    },
+     {
+      "titulo": "Dia 7: Booleanos",
+      "clasesInfo": "4 clase • 43 min",
+      "clases": [
+        { "nombre": "Booleanos", "duracion": "5:00" },
+        { "nombre": "Operadores Relacionales y logicos (teoria)", "duracion": "13:25" },
+        { "nombre": "Operadores Relacionales", "duracion": "12:11" },
+        { "nombre": "Operadores Logicos", "duracion": "12:17" }
+      ]
+    },
+     {
+      "titulo": "Dia 8: Condicionales",
+      "clasesInfo": "14 clase • 1 h 54 min",
+      "clases": [
+        { "nombre": "Condiconales (teoria)", "duracion": "7:25" },
+        { "nombre": "If y else", "duracion": "8:14" },
+        { "nombre": "Else if", "duracion": "10:11" },
+        { "nombre": "Condicionales aniadados", "duracion": "13:56" },
+        { "nombre": "Ejercicios", "duracion": "0:18" },
+        { "nombre": "Ejercicio 1", "duracion": "12:02" },
+        { "nombre": "Ejercicio 2", "duracion": "9:54" },
+        { "nombre": "Ejercicios", "duracion": "0:34" },
+        { "nombre": "Ejercicio 3", "duracion": "12:41" },
+        { "nombre": "Ejercicio 4", "duracion": "11:11" },
+        { "nombre": "Switch", "duracion": "9:30" },
+        { "nombre": "Ejercicios", "duracion": "0:17" },
+        { "nombre": "Ejercicio 5", "duracion": "9:20" },
+        { "nombre": "Ejercicio 6", "duracion": "8:46" }
+      ]
+    },
+     {
+      "titulo": "Dia 9: Estructuras de Datos",
+      "clasesInfo": "8 clases • 1 h 18 min",
+      "clases": [
+        { "nombre": "Arrays (Arreglos)", "duracion": "12:30" },
+        { "nombre": "Listas (List)", "duracion": "14:54" },
+        { "nombre": "Conjuntos (Set)", "duracion": "9:58" },
+        { "nombre": "Mapa (Map)", "duracion": "12:38" },
+        { "nombre": "Ejercicios", "duracion": "0:22" },
+        { "nombre": "Ejercicio 1", "duracion": "7:16" },
+        { "nombre": "Ejercicio 2", "duracion": "9:22" },
+        { "nombre": "Ejercicio 3", "duracion": "11:16" }
+      ]
+    },
+    {
+      "titulo": "Dia 10: Bucles",
+      "clasesInfo": "12 clases • 1 h 38 min",
+      "clases": [
+        { "nombre": "Bucles (Teoria)", "duracion": "8:55" },
+        { "nombre": "Bucle While", "duracion": "9:30" },
+        { "nombre": "Ejercicios", "duracion": "0:14" },
+        { "nombre": "Ejercicio 1", "duracion": "8:02" },
+        { "nombre": "Ejercicio 2", "duracion": "6:18" },
+        { "nombre": "Bucle For", "duracion": "12:40" },
+        { "nombre": "Bucle For Each", "duracion": "13:19" },
+        { "nombre": "Bucle Do While", "duracion": "9:20" },
+        { "nombre": "Ejercicios", "duracion": "0:16" },
+        { "nombre": "Ejercicio 3", "duracion": "10:31" },
+        { "nombre": "Ejercicio 4", "duracion": "9:20" },
+        { "nombre": "Break y Continue", "duracion": "9:23" }
+      ]
+    },
+    {
+      "titulo": "Dia 11: Funciones",
+      "clasesInfo": "4 clases • 30 min",
+      "clases": [
+        { "nombre": "Funciones (Teoria)", "duracion": "5:04" },
+        { "nombre": "Funciones", "duracion": "9:24" },
+        { "nombre": "Parámetros y Argumentos", "duracion": "8:37" },
+        { "nombre": "Return", "duracion": "7:17" }
+      ]
+    },
+    {
+      "titulo": "Dia 12: POO (Programación Orientada a Objetos)",
+      "clasesInfo": "5 clases • 1 h",
+      "clases": [
+        { "nombre": "¿Qué es POO?", "duracion": "14:32" },
+        { "nombre": "Creando Objetos", "duracion": "10:46" },
+        { "nombre": "Creando atributos y métodos", "duracion": "13:00" },
+        { "nombre": "Utilizando parámetros", "duracion": "12:03" },
+        { "nombre": "Retorno de valores usando los métodos", "duracion": "9:31" }
+      ]
+    },
+    {
+      "titulo": "Dia 13: Método Constructor",
+      "clasesInfo": "5 clases • 42 min",
+      "clases": [
+        { "nombre": "¿Qué es el método Constructor?", "duracion": "6:32" },
+        { "nombre": "Usando el método constructor", "duracion": "9:11" },
+        { "nombre": "Sobrecarga de método constructor y métodos tradicionales", "duracion": "9:27" },
+        { "nombre": "Modificadores de acceso", "duracion": "8:38" },
+        { "nombre": "Constantes en POO", "duracion": "8:05" }
+      ]
+    },
+    {
+      "titulo": "Dia 14: Herencia",
+      "clasesInfo": "4 clases • 50 min",
+      "clases": [
+        { "nombre": "¿Qué es Herencia?", "duracion": "9:01" },
+        { "nombre": "Práctica con herencia", "duracion": "14:31" },
+        { "nombre": "Clases abstractas", "duracion": "9:55" },
+        { "nombre": "Polimorfismo", "duracion": "16:08" }
+      ]
+    },
+    {
+      "titulo": "Dia 15: Encapsulamiento",
+      "clasesInfo": "4 clases • 37 min",
+      "clases": [
+        { "nombre": "¿Qué es Encapsulamiento?", "duracion": "8:35" },
+        { "nombre": "Demostración de encapsulamiento", "duracion": "13:31" },
+        { "nombre": "Métodos estáticos", "duracion": "7:03" },
+        { "nombre": "Sobrescritura de métodos", "duracion": "7:23" }
+      ]
+    },
+    {
+      "titulo": "Dia 16: Manejo de excepciones",
+      "clasesInfo": "4 clases • 38 min",
+      "clases": [
+        { "nombre": "¿Qué es manejo de excepciones?", "duracion": "7:56" },
+        { "nombre": "Miremos nuestras primeras excepciones", "duracion": "8:59" },
+        { "nombre": "Excepciones verificadas primera forma", "duracion": "7:09" },
+        { "nombre": "Try Catch", "duracion": "13:37" }
+      ]
+    },
+    {
+      "titulo": "Dia 17: Ventanas Graficas en Java",
+      "clasesInfo": "3 clases • 24 min",
+      "clases": [
+        { "nombre": "Creando nuestra primera ventana grafica", "duracion": "9:45" },
+        { "nombre": "Modificando nuestra ventana", "duracion": "6:16" },
+        { "nombre": "Establecer un tamaño mínimo y fondo", "duracion": "8:08" }
+      ]
+    },
+    {
+      "titulo": "Dia 18: Paneles dentro de Java",
+      "clasesInfo": "5 clases • 43 min",
+      "clases": [
+        { "nombre": "Agregando nuestro primer panel", "duracion": "10:19" },
+        { "nombre": "Agregando etiquetas", "duracion": "9:46" },
+        { "nombre": "Agregando fondo y color a nuestras etiquetas", "duracion": "7:09" },
+        { "nombre": "Estableciendo ubicación al contenido", "duracion": "6:12" },
+        { "nombre": "Modificando fuentes de nuestra etiqueta", "duracion": "9:14" }
+      ]
+    },
+    {
+      "titulo": "Dia 19: Imágenes en Java",
+      "clasesInfo": "2 clases • 24 min",
+      "clases": [
+        { "nombre": "Agregando imágenes a nuestra ventana", "duracion": "13:39" },
+        { "nombre": "Modificando tamaño de nuestras imágenes", "duracion": "10:09" }
+      ]
+    },
+    {
+      "titulo": "Dia 20: Botones y caja de textos en Java",
+      "clasesInfo": "5 clases • 50 min",
+      "clases": [
+        { "nombre": "Creando nuestro primer botón", "duracion": "10:50" },
+        { "nombre": "Añadiendo imágenes a un botón", "duracion": "6:19" },
+        { "nombre": "Creando Radiobotones", "duracion": "13:36" },
+        { "nombre": "Creando una caja de texto", "duracion": "10:14" },
+        { "nombre": "Creando un TextArea", "duracion": "8:49" }
+      ]
+    },
+    {
+      "titulo": "Dia 21: Eventos",
+      "clasesInfo": "4 clases • 48 min",
+      "clases": [
+        { "nombre": "Ordenando componentes", "duracion": "11:21" },
+        { "nombre": "Creando nuestro primer evento", "duracion": "8:50" },
+        { "nombre": "Capturando eventos del Mouse", "duracion": "16:51" },
+        { "nombre": "Capturando eventos del teclado", "duracion": "11:05" }
+      ]
+    },
+    {
+      "titulo": "Dia 22: Archivos en Java",
+      "clasesInfo": "3 clases • 28 min",
+      "clases": [
+        { "nombre": "Creando un archivo con Java", "duracion": "12:50" },
+        { "nombre": "Primera forma de leer datos de un archivo", "duracion": "8:49" },
+        { "nombre": "Segunda forma de leer datos de un archivo", "duracion": "6:04" }
+      ]
+    },
+    {
+      "titulo": "Dia 23: Java SQL (JDBC)",
+      "clasesInfo": "8 clases • 1 h 56 min",
+      "clases": [
+        { "nombre": "Instalación MySQL", "duracion": "7:47" },
+        { "nombre": "Cláusulas INSERT y SELECT", "duracion": "12:26" },
+        { "nombre": "Cláusulas DELETE y UPDATE", "duracion": "9:52" },
+        { "nombre": "Conectar Java con MySQL", "duracion": "17:42" },
+        { "nombre": "Pedir datos a MYSQL desde Java", "duracion": "20:25" },
+        { "nombre": "Insertar datos a MYSQL desde Java", "duracion": "20:23" },
+        { "nombre": "Actualizar datos en MYSQL desde Java", "duracion": "14:46" },
+        { "nombre": "Eliminar datos en MYSQL desde Java", "duracion": "12:24" }
+      ]
+    },
+    {
+      "titulo": "Dia 24: Java Swing",
+      "clasesInfo": "2 clases • 24 min",
+      "clases": [
+        { "nombre": "Java Swing", "duracion": "10:35" },
+        { "nombre": "Evento en Java Swing", "duracion": "13:09" }
+      ]
+    },
+    {
+      "titulo": "Dia 25: Proyecto calculadora",
+      "clasesInfo": "6 clases • 1 h 4 min",
+      "clases": [
+        { "nombre": "Introducción al proyecto", "duracion": "1:14" },
+        { "nombre": "Empezamos la calculadora", "duracion": "9:04" },
+        { "nombre": "Modificamos la parte grafica", "duracion": "9:14" },
+        { "nombre": "Agregamos los botones", "duracion": "11:26" },
+        { "nombre": "Parte lógica de la calculadora", "duracion": "14:43" },
+        { "nombre": "Terminando Calculadora", "duracion": "17:56" }
+      ]
+    },
+    {
+      "titulo": "Dia 26: Proyecto Inicio de sesión",
+      "clasesInfo": "4 clases • 52 min",
+      "clases": [
+        { "nombre": "Iniciamos proyecto de login", "duracion": "11:41" },
+        { "nombre": "Conectamos a la base de datos", "duracion": "16:01" },
+        { "nombre": "Validamos datos de login", "duracion": "12:20" },
+        { "nombre": "Finalizando proyecto Login", "duracion": "11:58" }
+      ]
+    },
+    {
+      "titulo": "Dia 27: Proyecto Gestión de Usuarios",
+      "clasesInfo": "4 clases • 1 h 10 min",
+      "clases": [
+        { "nombre": "Iniciando el Gestor", "duracion": "16:59" },
+        { "nombre": "Conexión a base de datos", "duracion": "10:08" },
+        { "nombre": "Creamos interfaz DAO", "duracion": "17:53" },
+        { "nombre": "Últimas peticiones al gestor", "duracion": "24:30" }
+      ]
+    },
+    {
+      "titulo": "Dia 28: Proyecto Sistema de Inventario",
+      "clasesInfo": "7 clases • 1 h 27 min",
+      "clases": [
+        { "nombre": "Iniciando proyecto inventarios", "duracion": "14:17" },
+        { "nombre": "Panel secundario", "duracion": "15:41" },
+        { "nombre": "Vista de productos", "duracion": "12:05" },
+        { "nombre": "Creación de base de datos", "duracion": "7:54" },
+        { "nombre": "Interfaz DAO", "duracion": "12:38" },
+        { "nombre": "Mostrando productos", "duracion": "14:17" },
+        { "nombre": "Finalizando proyecto", "duracion": "10:08" }
+      ]
+    },
+    {
+      "titulo": "Dia 29: Ejercicios para entrevistas",
+      "clasesInfo": "2 clases • 29 min",
+      "clases": [
+        { "nombre": "Primer ejercicio entrevistas", "duracion": "12:48" },
+        { "nombre": "Segundo ejercicio entrevistas", "duracion": "15:48" }
+      ]
+    },
+    {
+      "titulo": "Dia 30: Framework Spring",
+      "clasesInfo": "4 clases • 41 min",
+      "clases": [
+        { "nombre": "Crear proyecto SpringBoot forma 1", "duracion": "12:04" },
+        { "nombre": "Crear proyecto SpringBoot forma 2", "duracion": "11:06" },
+        { "nombre": "Hola Mundo Spring", "duracion": "8:20" },
+        { "nombre": "Logs en SpringBoot", "duracion": "9:25" }
+      ]
+    },
+    {
+      "titulo": "Dia 31: Rutas GET en SpringBoot",
+      "clasesInfo": "5 clases • 40 min",
+      "clases": [
+        { "nombre": "Primera ruta", "duracion": "6:36" },
+        { "nombre": "Múltiples rutas GET", "duracion": "6:59" },
+        { "nombre": "Parámetros en rutas", "duracion": "5:02" },
+        { "nombre": "Templates", "duracion": "9:56" },
+        { "nombre": "Otra forma de pasar parámetros", "duracion": "11:44" }
+      ]
+    },
+    {
+      "titulo": "Dia 32: Rutas POST en SpringBoot",
+      "clasesInfo": "3 clases • 28 min",
+      "clases": [
+        { "nombre": "Peticiones POST", "duracion": "5:34" },
+        { "nombre": "Datos a través de POST", "duracion": "9:10" },
+        { "nombre": "Modelo de datos", "duracion": "13:32" }
+      ]
+    },
+    {
+      "titulo": "Dia 33: HTTP Request",
+      "clasesInfo": "3 clases • 32 min",
+      "clases": [
+        { "nombre": "Primer HTTP Request", "duracion": "10:27" },
+        { "nombre": "Excepciones HTTP", "duracion": "10:07" },
+        { "nombre": "Segunda forma de manejar excepciones", "duracion": "11:26" }
+      ]
+    },
+    {
+      "titulo": "Dia 34: Data JSON",
+      "clasesInfo": "2 clases • 18 min",
+      "clases": [
+        { "nombre": "JSON en SpringBoot", "duracion": "12:01" },
+        { "nombre": "JSON en SpringBoot parte 2", "duracion": "6:27" }
+      ]
+    },
+    {
+      "titulo": "Dia 35: Servicios y Beans",
+      "clasesInfo": "4 clases • 51 min",
+      "clases": [
+        { "nombre": "Primer servicio", "duracion": "19:05" },
+        { "nombre": "Inyección de dependencias", "duracion": "11:21" },
+        { "nombre": "Beans en SpringBoot", "duracion": "13:00" },
+        { "nombre": "Anotación @Component", "duracion": "7:36" }
+      ]
+    },
+    {
+      "titulo": "Dia 36: Test de tu Aplicación",
+      "clasesInfo": "2 clases • 43 min",
+      "clases": [
+        { "nombre": "Primer test de integración", "duracion": "19:44" },
+        { "nombre": "Segundo test de integración", "duracion": "23:38" }
+      ]
+    },
+    {
+      "titulo": "Dia 37: Proyecto REST API",
+      "clasesInfo": "5 clases • 1 h 5 min",
+      "clases": [
+        { "nombre": "Iniciamos nuestro proyecto API", "duracion": "10:36" },
+        { "nombre": "Creamos nuestra primera entidad", "duracion": "14:29" },
+        { "nombre": "Servicio para gestionar la API", "duracion": "19:16" },
+        { "nombre": "Método DELETE y buenas prácticas", "duracion": "10:21" },
+        { "nombre": "Finalizando nuestra API", "duracion": "10:29" }
+      ]
+    },
+    {
+      "titulo": "Despedida",
+      "clasesInfo": "1 clase • 4 min",
+      "clases": [
+        { "nombre": "Sobre su profesor y equipo de trabajo", "duracion": "4:02" }
+      ]
+    },
+    {
+      "titulo": "Bonus Extra",
+      "clasesInfo": "1 clase • 3 min",
+      "clases": [
+        { "nombre": "Clase extra", "duracion": "2:43" }
+      ]
+    }
+  ]
+}

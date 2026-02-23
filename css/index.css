@@ -1,0 +1,186 @@
+/* Importación de fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root {
+    --primary-color: #00d2ff; /* Azul neón */
+    --premium-color: #ff9d00; /* Dorado para el Pack Premium */
+    --bg-dark: #0a0c10;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* Elimina el recuadro azul al tocar en móvil */
+}
+
+body {
+    background-color: var(--bg-dark);
+    /* Manchas de color de fondo para efecto profesional */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(157, 0, 255, 0.05) 0%, transparent 40%);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.hub-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Encabezado --- */
+.profile {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-container {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, var(--primary-color), #9d00ff);
+    display: inline-block;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--bg-dark);
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.profile p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+/* --- Grid de Enlaces --- */
+.links-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card i:first-child {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+}
+
+.glass-card span {
+    font-weight: 600;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+.glass-card i:last-child {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+/* Efecto al tocar (Feedback táctil) */
+.glass-card:active {
+    transform: scale(0.97);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* --- Resaltado para Pack Premium --- */
+.glass-card.highlight {
+    border: 1px solid rgba(255, 157, 0, 0.3);
+    background: linear-gradient(90deg, rgba(255, 157, 0, 0.05), rgba(255, 157, 0, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card.highlight i:first-child {
+    color: var(--premium-color);
+}
+
+/* Animación de brillo sutil para el Premium */
+.glass-card.highlight::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transform: rotate(45deg);
+    animation: shine 4s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-150%) rotate(45deg); }
+    100% { transform: translateX(150%) rotate(45deg); }
+}
+
+/* --- Botón Flotante WhatsApp --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #25d366;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    z-index: 100;
+    width: 80%;
+    max-width: 300px;
+    justify-content: center;
+}
+
+.whatsapp-float:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+.whatsapp-float i {
+    font-size: 1.4rem;
+}

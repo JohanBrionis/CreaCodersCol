@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreaCoders Pro - Formación Tech de Alto Nivel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0055ff;
+            --primary-light: #e6efff;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --premium: #d97706;
+            --premium-light: #fef3c7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        
+        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding-bottom: 80px; }
+        .container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER & HERO */
+        header {
+            background: linear-gradient(135deg, #0055ff 0%, #003399 100%);
+            padding: 50px 0 60px;
+            color: white;
+            text-align: center;
+            border-radius: 0 0 32px 32px;
+            margin-bottom: -30px;
+        }
+        .logo-box { width: 64px; height: 64px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.2); }
+        h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 10px; }
+        .hero-desc { font-size: 0.95rem; opacity: 0.9; max-width: 80%; margin: 0 auto; }
+
+        /* WHY CREACODERS (VALUE PROPOSITION) */
+        .value-bar {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 10;
+        }
+        .value-notice {
+            background: var(--primary-light); color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 12px; border-radius: 8px; display: inline-block; margin-bottom: 15px;
+        }
+        .value-bar p { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+        .value-bar strong { color: var(--text-dark); }
+
+        /* SECTION TITLES */
+        .section-header { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 16px; margin-left: 8px; }
+
+        /* PACK CARDS */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:active { transform: scale(0.98); }
+        .card-icon { width: 48px; height: 48px; background: var(--bg-body); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+        .card-info { flex: 1; }
+        .card-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+        .card-info p { font-size: 0.8rem; color: var(--text-muted); }
+        .card-price { font-weight: 800; font-size: 1.1rem; color: var(--text-dark); }
+
+        /* PREMIUM CARD */
+        .card.premium { border: 2px solid var(--premium); background: var(--premium-light); }
+        .card.premium .card-icon { background: white; color: var(--premium); }
+        .card.premium .card-price { color: var(--premium); }
+
+        /* PROMO BUNDLES */
+        .promo-container { margin-top: 50px; background: #0f172a; padding: 32px 24px; border-radius: 24px; color: white; }
+        .promo-title { text-align: center; margin-bottom: 24px; font-size: 1.2rem; font-weight: 800; }
+        
+        .bundle {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bundle-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+        .bundle-text p { font-size: 0.75rem; color: #94a3b8; }
+        
+        .bundle-action { text-align: right; }
+        .bundle-action .price { font-size: 1.2rem; font-weight: 800; color: white; display: block; margin-bottom: 8px; }
+        .bundle-action .old-price { font-size: 0.75rem; text-decoration: line-through; color: #64748b; margin-right: 5px; }
+        .btn-order { background: var(--primary); color: white; padding: 8px 16px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; text-decoration: none; }
+        
+        .bundle.best-value { border: 1px solid var(--premium); background: rgba(217, 119, 6, 0.1); }
+        .bundle.best-value .btn-order { background: var(--premium); }
+        .bundle.best-value .price { color: var(--premium); }
+
+        /* FOOTER SUPPORT */
+        .footer { text-align: center; margin-top: 50px; }
+        .footer p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
+        .footer a { color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 32px; height: 32px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h1>CreaCoders Hub</h1>
+            <p class="hero-desc">Elige tu ruta de aprendizaje y domina la programación con proyectos reales.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="value-bar">
+            <span class="value-notice">Certificado de Calidad</span>
+            <p>Cada pack contiene <strong>material exclusivo y único</strong>. Ningún curso se repite entre los diferentes programas de formación. Paga una vez, accede para siempre.</p>
+        </div>
+
+        <h2 class="section-header">Packs de Especialidad</h2>
+        
+        <a href="pack/python/Python.html" class="card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+            </div>
+            <div class="card-info">
+                <h3>Pack Python</h3>
+                <p>De 0 a Desarrollador Pro</p>
+            </div>
+            <span class="card-price">$10.000</span>
+        </a>
+
+        <a href="pack/java/Java.html" class="card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line></svg>
+            </div>
+            <div class="card-info">
+                <h3>Pack Java</h3>
+                <p>Reto 37 Días + SpringBoot</p>
+            </div>
+            <span class="card-price">$10.000</span>
+        </a>
+
+        <a href="pack/desarrollo-web/Desarrollo-Web.html" class="card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <div class="card-info">
+                <h3>Pack Web Fullstack</h3>
+                <p>Frontend y Backend Real</p>
+            </div>
+            <span class="card-price">$10.000</span>
+        </a>
+
+        <h2 class="section-header" style="margin-top: 32px;">Nuestra Colección Máxima</h2>
+        
+        <a href="pack/premium/Pack-Premium.html" class="card premium">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div class="card-info">
+                <h3>Pack Premium Full</h3>
+                <p>+60 Cursos de Programación</p>
+            </div>
+            <span class="card-price">$15.000</span>
+        </a>
+
+        <div class="promo-container">
+            <h2 class="promo-title">⚡ Combos Especiales</h2>
+            
+            <div class="bundle">
+                <div class="bundle-text">
+                    <h4>Cualquier 2 Packs</h4>
+                    <p>Ej: Python + Web</p>
+                </div>
+                <div class="bundle-action">
+                    <span class="price"><span class="old-price">$20.000</span>$16.000</span>
+                    <a href="https://wa.me/573019478430?text=Hola!%20Me%20interesa%20la%20promo%20de%202%20Packs%20por%20$16.000" class="btn-order">Comprar</a>
+                </div>
+            </div>
+
+            <div class="bundle best-value">
+                <div class="bundle-text">
+                    <h4>1 Pack + Premium</h4>
+                    <p>Ej: Java + 60 Cursos</p>
+                </div>
+                <div class="bundle-action">
+                    <span class="price"><span class="old-price">$25.000</span>$20.000</span>
+                    <a href="https://wa.me/573019478430?text=Hola!%20Quiero%20el%20Combo%20Premium%20por%20$20.000" class="btn-order">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>¿No sabes por dónde empezar?</p>
+            <a href="https://wa.me/573019478430?text=Hola!%20Necesito%20asesoria%20para%20elegir%20mi%20pack%20ideal">Habla con un asesor en WhatsApp →</a>
+        </div>
+    </main>
+
+</body>
+</html>
