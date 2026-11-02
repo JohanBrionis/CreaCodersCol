@@ -8,6 +8,7 @@
     <style>
         :root {
             --primary: #0055ff;
+            --primary-dark: #0040c7;
             --primary-light: #e6efff;
             --bg-body: #f8fafc;
             --bg-card: #ffffff;
@@ -16,12 +17,14 @@
             --border: #e2e8f0;
             --premium: #d97706;
             --premium-light: #fef3c7;
+            --whatsapp-green: #25d366;
+            --whatsapp-dark: #1ebe5d;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
         
         body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding-bottom: 80px; }
-        .container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 520px; margin: 0 auto; padding: 0 20px; }
 
         /* HEADER & HERO */
         header {
@@ -34,9 +37,9 @@
         }
         .logo-box { width: 64px; height: 64px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.2); }
         h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 10px; }
-        .hero-desc { font-size: 0.95rem; opacity: 0.9; max-width: 80%; margin: 0 auto; }
+        .hero-desc { font-size: 0.95rem; opacity: 0.9; max-width: 85%; margin: 0 auto; }
 
-        /* WHY CREACODERS (VALUE PROPOSITION) */
+        /* VALUE PROPOSITION */
         .value-bar {
             background: var(--bg-card);
             border-radius: 20px;
@@ -45,17 +48,18 @@
             margin-bottom: 40px;
             position: relative;
             z-index: 10;
+            border: 1px solid var(--border);
         }
         .value-notice {
-            background: var(--primary-light); color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 12px; border-radius: 8px; display: inline-block; margin-bottom: 15px;
+            background: var(--primary-light); color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 12px; border-radius: 8px; display: inline-block; margin-bottom: 12px;
         }
         .value-bar p { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
         .value-bar strong { color: var(--text-dark); }
 
         /* SECTION TITLES */
-        .section-header { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 16px; margin-left: 8px; }
+        .section-header { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 16px; margin-left: 4px; }
 
-        /* PACK CARDS */
+        /* PACK CARDS CON BOTONES DESCRIPTIVOS */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -63,54 +67,119 @@
             padding: 20px;
             margin-bottom: 16px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 16px;
             text-decoration: none;
             color: inherit;
             transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
         .card:active { transform: scale(0.98); }
-        .card-icon { width: 48px; height: 48px; background: var(--bg-body); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+        
+        .card-top { display: flex; align-items: center; gap: 16px; }
+        .card-icon { width: 48px; height: 48px; background: var(--bg-body); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; }
         .card-info { flex: 1; }
-        .card-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
-        .card-info p { font-size: 0.8rem; color: var(--text-muted); }
-        .card-price { font-weight: 800; font-size: 1.1rem; color: var(--text-dark); }
+        .card-info h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 2px; }
+        .card-info p { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+        .card-price-badge { font-weight: 800; font-size: 1rem; color: var(--primary); background: var(--primary-light); padding: 6px 12px; border-radius: 10px; }
 
-        /* PREMIUM CARD */
+        /* Botón de acción dentro de la tarjeta */
+        .card-cta-btn {
+            width: 100%;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 800;
+            padding: 12px 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.2s, color 0.2s;
+        }
+        .card:hover .card-cta-btn { background: var(--primary); color: white; }
+
+        /* CARD PREMIUM */
         .card.premium { border: 2px solid var(--premium); background: var(--premium-light); }
         .card.premium .card-icon { background: white; color: var(--premium); }
-        .card.premium .card-price { color: var(--premium); }
+        .card.premium .card-price-badge { background: #fde68a; color: #92400e; }
+        .card.premium .card-cta-btn { background: #fde68a; color: #92400e; }
+        .card.premium:hover .card-cta-btn { background: var(--premium); color: white; }
 
         /* PROMO BUNDLES */
-        .promo-container { margin-top: 50px; background: #0f172a; padding: 32px 24px; border-radius: 24px; color: white; }
-        .promo-title { text-align: center; margin-bottom: 24px; font-size: 1.2rem; font-weight: 800; }
+        .promo-container { margin-top: 40px; background: #0f172a; padding: 32px 20px; border-radius: 24px; color: white; }
+        .promo-title { text-align: center; margin-bottom: 8px; font-size: 1.25rem; font-weight: 800; }
+        .promo-subtitle { text-align: center; font-size: 0.8rem; color: #94a3b8; margin-bottom: 24px; }
         
         .bundle {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
+            border-radius: 18px;
             padding: 20px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 16px;
         }
-        .bundle-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
-        .bundle-text p { font-size: 0.75rem; color: #94a3b8; }
         
-        .bundle-action { text-align: right; }
-        .bundle-action .price { font-size: 1.2rem; font-weight: 800; color: white; display: block; margin-bottom: 8px; }
-        .bundle-action .old-price { font-size: 0.75rem; text-decoration: line-through; color: #64748b; margin-right: 5px; }
-        .btn-order { background: var(--primary); color: white; padding: 8px 16px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; text-decoration: none; }
+        .bundle-header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .bundle-text h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+        .bundle-text p { font-size: 0.8rem; color: #94a3b8; font-weight: 500; }
         
-        .bundle.best-value { border: 1px solid var(--premium); background: rgba(217, 119, 6, 0.1); }
-        .bundle.best-value .btn-order { background: var(--premium); }
-        .bundle.best-value .price { color: var(--premium); }
+        .bundle-price-box { text-align: right; }
+        .bundle-price-box .price { font-size: 1.3rem; font-weight: 800; color: white; display: block; }
+        .bundle-price-box .old-price { font-size: 0.8rem; text-decoration: line-through; color: #64748b; margin-right: 4px; }
+
+        /* Botón de Orden Grande y Descriptivo */
+        .btn-order-whatsapp {
+            background: var(--whatsapp-green);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-order-whatsapp:hover { background: var(--whatsapp-dark); transform: translateY(-1px); }
+
+        .bundle.best-value { border: 2px solid var(--premium); background: rgba(217, 119, 6, 0.12); }
+        .bundle.best-value .price { color: #f59e0b; }
+        .bundle.best-value .btn-order-whatsapp { background: var(--premium); box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); }
+        .bundle.best-value .btn-order-whatsapp:hover { background: #b45309; }
 
         /* FOOTER SUPPORT */
-        .footer { text-align: center; margin-top: 50px; }
-        .footer p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
-        .footer a { color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; }
+        .footer-support {
+            text-align: center;
+            margin-top: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 20px;
+        }
+        .footer-support p { font-size: 0.9rem; color: var(--text-dark); font-weight: 700; margin-bottom: 12px; }
+        .btn-advisor-whatsapp {
+            background: #1e293b;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .btn-advisor-whatsapp:hover { background: #0f172a; }
     </style>
 </head>
 <body>
@@ -127,87 +196,131 @@
 
     <main class="container">
         <div class="value-bar">
-            <span class="value-notice">Certificado de Calidad</span>
-            <p>Cada pack contiene <strong>material exclusivo y único</strong>. Ningún curso se repite entre los diferentes programas de formación. Paga una vez, accede para siempre.</p>
+            <span class="value-notice">Garantía de Calidad</span>
+            <p>Cada pack contiene <strong>material exclusivo y único</strong>. Ningún curso se repite entre los programas. Pagas una sola vez y accedes para siempre.</p>
         </div>
 
         <h2 class="section-header">Packs de Especialidad</h2>
         
+        <!-- CARD PYTHON -->
         <a href="pack/python/Python.html" class="card">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                </div>
+                <div class="card-info">
+                    <h3>Pack Python</h3>
+                    <p>De 0 a Desarrollador Pro · 5 Cursos</p>
+                </div>
+                <span class="card-price-badge">$10.000</span>
             </div>
-            <div class="card-info">
-                <h3>Pack Python</h3>
-                <p>De 0 a Desarrollador Pro</p>
+            <div class="card-cta-btn">
+                <span>Ver contenido y temas de los 5 cursos</span>
+                <span>Explorar ↗</span>
             </div>
-            <span class="card-price">$10.000</span>
         </a>
 
+        <!-- CARD JAVA -->
         <a href="pack/java/Java.html" class="card">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line></svg>
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line></svg>
+                </div>
+                <div class="card-info">
+                    <h3>Pack Java</h3>
+                    <p>Reto 37 Días + SpringBoot Profesional</p>
+                </div>
+                <span class="card-price-badge">$10.000</span>
             </div>
-            <div class="card-info">
-                <h3>Pack Java</h3>
-                <p>Reto 37 Días + SpringBoot</p>
+            <div class="card-cta-btn">
+                <span>Ver lecciones del reto y temario</span>
+                <span>Explorar ↗</span>
             </div>
-            <span class="card-price">$10.000</span>
         </a>
 
+        <!-- CARD WEB -->
         <a href="pack/desarrollo-web/Desarrollo-Web.html" class="card">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <div class="card-info">
+                    <h3>Pack Web Fullstack</h3>
+                    <p>Frontend, Backend y Bases de Datos</p>
+                </div>
+                <span class="card-price-badge">$10.000</span>
             </div>
-            <div class="card-info">
-                <h3>Pack Web Fullstack</h3>
-                <p>Frontend y Backend Real</p>
+            <div class="card-cta-btn">
+                <span>Ver proyectos y módulos web</span>
+                <span>Explorar ↗</span>
             </div>
-            <span class="card-price">$10.000</span>
         </a>
 
         <h2 class="section-header" style="margin-top: 32px;">Nuestra Colección Máxima</h2>
         
+        <!-- CARD PREMIUM -->
         <a href="pack/premium/Pack-Premium.html" class="card premium">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="card-info">
+                    <h3>Pack Premium Full</h3>
+                    <p>Biblioteca Máxima · +60 Cursos Tech</p>
+                </div>
+                <span class="card-price-badge">$15.000</span>
             </div>
-            <div class="card-info">
-                <h3>Pack Premium Full</h3>
-                <p>+60 Cursos de Programación</p>
+            <div class="card-cta-btn">
+                <span>Ver la lista completa de los +60 cursos</span>
+                <span>Ver todo ↗</span>
             </div>
-            <span class="card-price">$15.000</span>
         </a>
 
+        <!-- PROMO BUNDLES -->
         <div class="promo-container">
-            <h2 class="promo-title">⚡ Combos Especiales</h2>
+            <h2 class="promo-title">⚡ Combos en Oferta Especial</h2>
+            <p class="promo-subtitle">Elige varios contenidos y ahorra solicitando directamente por WhatsApp</p>
             
             <div class="bundle">
-                <div class="bundle-text">
-                    <h4>Cualquier 2 Packs</h4>
-                    <p>Ej: Python + Web</p>
+                <div class="bundle-header">
+                    <div class="bundle-text">
+                        <h4>Combo 2 Packs a Elección</h4>
+                        <p>Ejemplo: Pack Python + Pack Web Fullstack</p>
+                    </div>
+                    <div class="bundle-price-box">
+                        <span class="price"><span class="old-price">$20.000</span>$16.000</span>
+                    </div>
                 </div>
-                <div class="bundle-action">
-                    <span class="price"><span class="old-price">$20.000</span>$16.000</span>
-                    <a href="https://wa.me/573019478430?text=Hola!%20Me%20interesa%20la%20promo%20de%202%20Packs%20por%20$16.000" class="btn-order">Comprar</a>
-                </div>
+                <a href="https://wa.me/573019478430?text=Hola!%20Quiero%20aprovechar%20la%20promo%20de%202%20Packs%20por%20$16.000.%20Mis%20elegidos%20son:" target="_blank" class="btn-order-whatsapp">
+                    <span>Pedir 2 Packs x $16.000 por WhatsApp</span>
+                    <span>💬</span>
+                </a>
             </div>
 
             <div class="bundle best-value">
-                <div class="bundle-text">
-                    <h4>1 Pack + Premium</h4>
-                    <p>Ej: Java + 60 Cursos</p>
+                <div class="bundle-header">
+                    <div class="bundle-text">
+                        <h4>Combo 1 Pack + Premium Full</h4>
+                        <p>Ejemplo: Pack Java + Colección de 60 Cursos</p>
+                    </div>
+                    <div class="bundle-price-box">
+                        <span class="price"><span class="old-price">$25.000</span>$20.000</span>
+                    </div>
                 </div>
-                <div class="bundle-action">
-                    <span class="price"><span class="old-price">$25.000</span>$20.000</span>
-                    <a href="https://wa.me/573019478430?text=Hola!%20Quiero%20el%20Combo%20Premium%20por%20$20.000" class="btn-order">Comprar</a>
-                </div>
+                <a href="https://wa.me/573019478430?text=Hola!%20Quiero%20el%20Combo%20Especial%20(1%20Pack%20+%20Premium%20Full)%20por%20$20.000" target="_blank" class="btn-order-whatsapp">
+                    <span>Pedir Combo Premium x $20.000 por WhatsApp</span>
+                    <span>⚡</span>
+                </a>
             </div>
         </div>
 
-        <div class="footer">
-            <p>¿No sabes por dónde empezar?</p>
-            <a href="https://wa.me/573019478430?text=Hola!%20Necesito%20asesoria%20para%20elegir%20mi%20pack%20ideal">Habla con un asesor en WhatsApp →</a>
+        <!-- FOOTER ASESORÍA -->
+        <div class="footer-support">
+            <p>¿Tienes dudas sobre cuál pack se adapta mejor a ti?</p>
+            <a href="https://wa.me/573019478430?text=Hola!%20Necesito%20asesoria%20personalizada%20para%20elegir%20mi%20pack%20de%20programacion" target="_blank" class="btn-advisor-whatsapp">
+                <span>Hablar con un Asesor en WhatsApp</span>
+                <span>→</span>
+            </a>
         </div>
     </main>
 
