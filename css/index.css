@@ -1,186 +1,78 @@
-/* Importación de fuente moderna */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-
-:root {
-    --primary-color: #00d2ff; /* Azul neón */
-    --premium-color: #ff9d00; /* Dorado para el Pack Premium */
-    --bg-dark: #0a0c10;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --text-main: #ffffff;
-    --text-muted: #94a3b8;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap');
+:root{--green:#58cc02;--deep:#58a700;--ink:#263923;--muted:#52634d;--line:#dee6d9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;padding-bottom:140px;background:#fff;color:var(--ink);font:600 17px/1.6 'Nunito',system-ui,sans-serif}
+a{color:#316b14;text-underline-offset:4px}
+h1,h2,h3,p{margin:0 0 16px}
+h1{font-size:clamp(40px,5vw,64px);line-height:1.06;font-weight:900;letter-spacing:-1.8px}
+h2{font-size:clamp(28px,3vw,38px);line-height:1.2;font-weight:900}
+h3{font-size:24px;line-height:1.2}
+.wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:24px}
+.brand{text-decoration:none;font-size:27px;font-weight:900;letter-spacing:-1px}
+.brand span{display:block;font-size:10px;letter-spacing:2px}
+.button{display:inline-flex;justify-content:center;align-items:center;min-height:52px;padding:13px 22px;background:var(--green);border:2px solid var(--deep);border-radius:16px;box-shadow:0 4px 0 var(--deep);color:#193500;text-decoration:none;text-align:center;font-weight:900;line-height:1.3;transition:transform .18s,background .18s}
+.button:hover{background:#89e219}
+.button:active{transform:translateY(4px);box-shadow:none}
+.secondary{background:#fff;border-color:var(--line);box-shadow:0 4px 0 var(--line)}
+.secondary:hover{background:#f0f9e9}
+.hero{background:var(--green);border-block:3px solid var(--deep);padding:56px 0}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:1.7px;font-weight:900}
+.lead{font-size:20px}
+.activation{background:#dbf8c5;border:2px solid #4d9d0b;border-radius:16px;padding:16px}
+.offer{background:#fff;border:3px solid var(--deep);border-radius:24px;padding:28px;box-shadow:0 7px 0 #4d990a}
+.offer .price{font-size:clamp(36px,4vw,50px);font-weight:900;line-height:1.1}
+.price small{font-size:18px}
+.timer{font-size:24px;font-weight:900;font-variant-numeric:tabular-nums;background:#f1f9e9;border-radius:12px;padding:12px}
+.fine,.muted,small{font-size:14px;color:var(--muted)}
+.fine{margin:16px 0 0}
+.section{padding-block:56px}
+.packs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:28px}
+.pack{border:2px solid var(--line);border-bottom-width:6px;border-radius:20px;padding:28px;display:flex;flex-direction:column;align-items:flex-start}
+.pack .button{margin-top:auto;width:100%}
+.pack.premium{background:#f5ecff;border-color:#ba8add}
+.icon{display:grid;place-items:center;background:#dbf8c5;border:2px solid #b4df91;box-shadow:0 5px 0 #b4df91;border-radius:20px;width:64px;height:64px;font-weight:900;font-size:24px;margin-bottom:24px}
+.premium .icon{background:#ce82ff;border-color:#ab60db;box-shadow:0 5px 0 #ab60db}
+.included{color:#326b11;font-weight:900}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.steps b{font-size:32px;color:#526d39}
+.steps article{background:#f2f9ec;border-radius:20px;padding:24px}
+details{border:2px solid var(--line);border-bottom-width:4px;border-radius:16px;margin-block:16px;padding:0 20px}
+summary{min-height:64px;padding:18px 0;font-weight:900;cursor:pointer}
+details p{padding-bottom:16px}
+li{padding:12px 8px;border-top:2px solid #edf0e9}
+li small{display:block}
+ol{padding-left:28px}
+.search-label{display:block;font-weight:900;margin-top:24px}
+input{display:block;width:100%;border:2px solid var(--line);border-radius:12px;padding:16px;font:inherit;margin-top:8px}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:3px solid var(--line);padding:16px max(20px,calc((100vw - 1080px)/2));padding-bottom:max(16px,env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:20}
+.sticky strong,.sticky small{display:block}
+.sticky strong{font-size:21px}
+.sticky small{font-variant-numeric:tabular-nums}
+footer{border-top:2px solid var(--line);padding-block:32px;font-size:14px}
+.skip{position:absolute;top:-100px;background:#fff;padding:16px;z-index:100}
+.skip:focus{top:0}
+:focus-visible{outline:3px solid #005fcc;outline-offset:5px}
+[hidden]{display:none!important}
+@media(max-width:700px){.hero-grid,.steps,.packs{grid-template-columns:1fr}
+.hero{padding:32px 0}
+.hero-grid{gap:24px}
+.nav{padding-block:18px}
+.brand{font-size:21px}
+.brand span{font-size:8px}
+.nav .button{font-size:13px;padding:10px}
+.section{padding-block:36px}
+.offer,.pack{padding:24px}
+.sticky{gap:8px;flex-wrap:wrap}
+.sticky>div{display:flex;justify-content:space-between;align-items:center;width:100%;gap:10px}
+.sticky strong{font-size:16px}
+.sticky small{font-size:12px}
+.sticky .button{width:100%}
+body{padding-bottom:160px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+*{transition:none!important}
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent; /* Elimina el recuadro azul al tocar en móvil */
-}
-
-body {
-    background-color: var(--bg-dark);
-    /* Manchas de color de fondo para efecto profesional */
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(157, 0, 255, 0.05) 0%, transparent 40%);
-    font-family: 'Inter', sans-serif;
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.hub-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 40px 20px 100px 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* --- Encabezado --- */
-.profile {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.logo-container {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 15px;
-    border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(45deg, var(--primary-color), #9d00ff);
-    display: inline-block;
-}
-
-.logo {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    background: var(--bg-dark);
-}
-
-h1 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 8px;
-}
-
-.profile p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    max-width: 250px;
-    margin: 0 auto;
-}
-
-/* --- Grid de Enlaces --- */
-.links-grid {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 18px 24px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-main);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card i:first-child {
-    font-size: 1.6rem;
-    color: var(--primary-color);
-    margin-right: 15px;
-}
-
-.glass-card span {
-    font-weight: 600;
-    font-size: 1rem;
-    flex-grow: 1;
-}
-
-.glass-card i:last-child {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    opacity: 0.5;
-}
-
-/* Efecto al tocar (Feedback táctil) */
-.glass-card:active {
-    transform: scale(0.97);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--primary-color);
-}
-
-/* --- Resaltado para Pack Premium --- */
-.glass-card.highlight {
-    border: 1px solid rgba(255, 157, 0, 0.3);
-    background: linear-gradient(90deg, rgba(255, 157, 0, 0.05), rgba(255, 157, 0, 0.1));
-    position: relative;
-    overflow: hidden;
-}
-
-.glass-card.highlight i:first-child {
-    color: var(--premium-color);
-}
-
-/* Animación de brillo sutil para el Premium */
-.glass-card.highlight::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-    transform: rotate(45deg);
-    animation: shine 4s infinite;
-}
-
-@keyframes shine {
-    0% { transform: translateX(-150%) rotate(45deg); }
-    100% { transform: translateX(150%) rotate(45deg); }
-}
-
-/* --- Botón Flotante WhatsApp --- */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #25d366;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 50px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-    z-index: 100;
-    width: 80%;
-    max-width: 300px;
-    justify-content: center;
-}
-
-.whatsapp-float:active {
-    transform: translateX(-50%) scale(0.95);
-}
-
-.whatsapp-float i {
-    font-size: 1.4rem;
-}

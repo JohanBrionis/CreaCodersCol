@@ -1,223 +1,406 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pack Premium VIP (+60 Cursos) - CreaCoders</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --premium: #f59e0b; /* Ambar/Oro */
-            --premium-dark: #b45309;
-            --bg-dark: #0f172a; /* Fondo Oscuro VIP */
-            --bg-card: #1e293b;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --white: #ffffff;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
-        
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; padding-bottom: 100px; }
-        .container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
-
-        /* HEADER VIP */
-        header {
-            background: radial-gradient(circle at top right, #1e293b 0%, var(--bg-dark) 100%);
-            padding: 60px 0 40px;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-        .icon-box { width: 70px; height: 70px; background: rgba(245, 158, 11, 0.1); color: var(--premium); border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(245, 158, 11, 0.3); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.15); }
-        .badge { background: rgba(245, 158, 11, 0.2); color: var(--premium); padding: 6px 14px; border-radius: 20px; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; border: 1px solid var(--premium-dark); margin-bottom: 15px; display: inline-block; }
-        h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 12px; color: var(--white); }
-        h1 span { color: var(--premium); }
-        .hero-desc { font-size: 0.95rem; color: var(--text-muted); max-width: 90%; margin: 0 auto 30px; }
-
-        /* MAIN PRICING CARD */
-        .pricing-card { background: linear-gradient(135deg, var(--premium-dark) 0%, #78350f 100%); color: white; padding: 30px; border-radius: 24px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); margin: 0 auto; border: 1px solid var(--premium); }
-        .pricing-card .label { font-size: 0.8rem; font-weight: 800; color: #fde68a; text-transform: uppercase; letter-spacing: 1px; }
-        .pricing-card .price { font-size: 2.8rem; font-weight: 800; line-height: 1; margin: 10px 0; }
-        .pricing-card .sub { font-size: 0.85rem; color: #fef3c7; opacity: 0.9; }
-
-        /* VALUE PROPOSITION GRID */
-        .section-title { font-size: 1.2rem; font-weight: 800; margin: 40px 0 20px; text-align: center; color: var(--white); }
-        .value-grid { display: grid; gap: 12px; margin-bottom: 40px; }
-        .value-item { background: var(--bg-card); padding: 20px; border-radius: 16px; border: 1px solid var(--border); display: flex; align-items: flex-start; gap: 16px; }
-        .value-item svg { width: 28px; height: 28px; color: var(--premium); flex-shrink: 0; }
-        .value-item h4 { font-size: 0.95rem; color: var(--white); margin-bottom: 4px; }
-        .value-item p { font-size: 0.8rem; color: var(--text-muted); }
-
-        /* DRIVE CLOUD BOX */
-        .cloud-box { background: rgba(255,255,255,0.03); border: 1px dashed var(--text-muted); padding: 20px; border-radius: 16px; text-align: center; margin-bottom: 40px; }
-        .cloud-box svg { width: 40px; height: 40px; color: var(--white); margin-bottom: 10px; opacity: 0.8; }
-        .cloud-box p { font-size: 0.85rem; color: var(--text-muted); }
-        .cloud-box strong { color: var(--premium); }
-
-        /* ACCORDION (DARK THEME) */
-        .accordion { display: grid; gap: 12px; }
-        .course-step { border: 1px solid var(--border); border-radius: 16px; background: var(--bg-card); transition: 0.2s; }
-        summary { padding: 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; color: var(--white); }
-        summary::after { content: '+'; color: var(--premium); font-size: 1.2rem; }
-        .step-content { padding: 0 20px 20px; border-top: 1px solid var(--border); margin-top: 10px; padding-top: 15px; }
-        .step-content li { display: flex; justify-content: space-between; padding: 10px 0; font-size: 0.85rem; color: var(--text-muted); border-bottom: 1px solid var(--bg-dark); }
-        .step-content li span { color: var(--premium); font-weight: 700; font-size: 0.75rem; background: rgba(245, 158, 11, 0.1); padding: 2px 8px; border-radius: 8px; }
-
-        /* BUNDLES CROSS-SELL (THE ULTIMATE UPSELL) */
-        .bundle-section { margin-top: 50px; background: var(--bg-card); padding: 30px 20px; border-radius: 24px; border: 1px solid var(--border); }
-        
-        .promo-combo { background: var(--white); color: var(--bg-dark); padding: 24px; border-radius: 16px; margin-top: 10px; }
-        .promo-tag { background: var(--bg-dark); color: var(--white); font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 8px; margin-bottom: 12px; display: inline-block; letter-spacing: 1px; }
-        .combo-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
-        .combo-row:last-child { border: none; padding-bottom: 0; }
-        .combo-name { font-weight: 800; font-size: 0.9rem; }
-        .combo-price { font-weight: 900; color: #0055ff; font-size: 1.1rem; }
-
-        /* STICKY CTA */
-        .sticky-cta { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 500px; z-index: 1000; }
-        .btn-whatsapp { background: var(--premium); color: var(--bg-dark); text-decoration: none; padding: 18px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 15px 25px rgba(245, 158, 11, 0.2); }
-        .btn-whatsapp .main { font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; gap: 8px; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pack Premium Full | CreaCoders</title>
+<meta name="description" content="Explora los cuatro packs de CreaCoders: Premium, Python, Java y Web Fullstack. Acceso permanente y compra por WhatsApp.">
+<link rel="stylesheet" href="../../css/index.css">
+<script defer src="../../js/offer.js">
+</script>
 </head>
-<body>
-
-  <a href="/../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #e2e8f0; color: #1a1d23; text-decoration: none; padding: 10px 16px; border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-    Volver
+<body data-pack="Premium Full">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="nav wrap">
+<a class="brand" href="../../index.html">&lt;/&gt; creacoders<span>APRENDE. CREA. AVANZA.</span>
 </a>
-
-    <header>
-        <div class="container">
-            <div class="icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 32px; height: 32px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-            <div class="badge">Acceso Ilimitado</div>
-            <h1>Pack Premium<br><span>+60 Cursos Pro</span></h1>
-            <p class="hero-desc">La biblioteca definitiva. Desde nivel cero hasta avanzado con actualizaciones semanales gratuitas.</p>
-            
-            <div class="pricing-card">
-                <p class="label">Suscripción de por vida</p>
-                <p class="price">$15.000 COP</p>
-                <p class="sub">Pago único. Sin cargos ocultos mensuales.</p>
-            </div>
-        </div>
-    </header>
-
-    <main class="container">
-        
-        <h2 class="section-title">¿Por qué este es el mejor Pack?</h2>
-        
-        <div class="value-grid">
-            <div class="value-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                <div>
-                    <h4>Actualizaciones Semanales</h4>
-                    <p>Subimos un curso nuevo cada semana. Tu biblioteca nunca dejará de crecer y no pagas más.</p>
-                </div>
-            </div>
-            <div class="value-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                <div>
-                    <h4>Acceso de Por Vida</h4>
-                    <p>Olvídate de las mensualidades de las plataformas tradicionales. Paga hoy y aprende a tu ritmo para siempre.</p>
-                </div>
-            </div>
-            <div class="value-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                <div>
-                    <h4>Contenido Completo</h4>
-                    <p>Videos paso a paso, documentación, ejercicios y proyectos reales listos para añadir a tu portafolio.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="cloud-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
-            <p>Alojadamos más de <strong>100 GB de contenido premium</strong> en un servidor privado de Google Drive. Al comprar, te damos acceso directo a la nube para que descargues o veas online desde cualquier dispositivo.</p>
-        </div>
-
-        <h2 class="section-title">¿Qué incluye la biblioteca?</h2>
-        <p id="course-summary" style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;"></p>
-        <div class="accordion" id="course-accordion"></div>
-
-        <section class="bundle-section">
-            <h2 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 20px; color: white;">¿Quieres la experiencia definitiva?</h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Este Pack Premium te da acceso a la biblioteca, pero si lo combinas con nuestros <strong style="color: white;">Retos Especializados (Python, Java o Web)</strong> tendrás la ruta exacta para conseguir empleo.</p>
-            
-            <div class="promo-combo">
-                <span class="promo-tag">OFERTA "MASTER ACCESS"</span>
-                
-                <div class="combo-row">
-                    <div>
-                        <span class="combo-name">Premium + Pack Python</span>
-                        <p style="font-size: 0.75rem; color: #64748b;">Ahorras $5.000</p>
-                    </div>
-                    <span class="combo-price">$20.000</span>
-                </div>
-                
-                <div class="combo-row">
-                    <div>
-                        <span class="combo-name">Premium + Pack Java</span>
-                        <p style="font-size: 0.75rem; color: #64748b;">Ahorras $5.000</p>
-                    </div>
-                    <span class="combo-price">$20.000</span>
-                </div>
-
-                <div class="combo-row">
-                    <div>
-                        <span class="combo-name">Premium + Desarrollo Web</span>
-                        <p style="font-size: 0.75rem; color: #64748b;">Ahorras $5.000</p>
-                    </div>
-                    <span class="combo-price">$20.000</span>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="/../index.html" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: none; border-bottom: 1px solid var(--border);">← Volver a ver todos los packs</a>
-            </div>
-        </section>
-
-    </main>
-
-    <div class="sticky-cta">
-        <a href="https://wa.me/573019478430?text=Hola!%20Vengo%20de%20CreaCoders%20y%20quiero%20acceso%20al%20Pack%20Premium%20(+60%20cursos)%20por%20$15.000" class="btn-whatsapp">
-            <span style="font-size: 0.75rem; opacity: 0.9; margin-bottom: 4px; color: var(--bg-dark);">ACTUALIZACIONES SEMANALES INCLUIDAS</span>
-            <span class="main">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                Obtener Acceso Ahora
-            </span>
-        </a>
-    </div>
-
-    <script>
-        async function loadContent() {
-            const accordion = document.getElementById('course-accordion');
-            const summaryText = document.getElementById('course-summary');
-            try {
-                const res = await fetch('temario-premium.json');
-                const data = await res.json();
-                summaryText.innerText = `${data.totalClases} Cursos Completos • ${data.duracionTotal}`;
-                accordion.innerHTML = data.secciones.map(sec => `
-                    <details class="course-step">
-                        <summary>
-                            <div style="display:grid">
-                                <span>${sec.titulo}</span>
-                                <small style="font-weight:500; font-size:0.75rem; color:var(--text-muted);">${sec.clasesInfo}</small>
-                            </div>
-                        </summary>
-                        <div class="step-content">
-                            <ul>
-                                ${sec.clases.map(c => `<li>${c.nombre} <span>${c.duracion}</span></li>`).join('')}
-                            </ul>
-                        </div>
-                    </details>
-                `).join('');
-            } catch (e) {
-                summaryText.innerText = "Catálogo completo disponible vía WhatsApp.";
-            }
-        }
-        document.addEventListener('DOMContentLoaded', loadContent);
-    </script>
+<a class="button secondary" href="../../index.html#packs">Ver los 4 packs</a>
+</header>
+<main id="contenido">
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<a href="../../index.html#packs">← Volver a los 4 packs</a>
+<p class="eyebrow">INCLUIDO EN EL COMBO DE 4 PACKS</p>
+<h1>Pack Premium Full</h1>
+<p class="lead">La biblioteca protagonista: frontend, backend, IA, diseño y mucho más.</p>
+<p>Valor individual: <strong>$10.000 COP</strong>
+</p>
+<a class="button secondary" href="#temario">Ver contenido ↓</a>
+</div>
+<section class="offer" aria-label="Precio de los cuatro packs">
+<p class="eyebrow" data-offer-title>LOS 4 PACKS · ACCESO PERMANENTE</p>
+<p class="price" data-price>$40.000 <small>COP</small>
+</p>
+<p data-saving>Precio normal: $10.000 por pack.</p>
+<p class="timer" role="timer" aria-label="Tiempo restante de la oferta" data-timer>Comprobando oferta…</p>
+<p data-deadline>
+</p>
+<a class="button" data-buy href="https://wa.me/573026656161">Consultar los 4 packs por WhatsApp →</a>
+<p class="fine">Un solo pago. Acceso permanente a los cuatro packs.</p>
+</section>
+</div>
+</section>
+<section class="wrap section" id="temario">
+<p class="eyebrow">EXPLORA A TU RITMO</p>
+<h2>Todo lo que incluye Premium Full</h2>
+<p>Listado del <a href="https://creacoders.netlify.app/cursos" target="_blank" rel="noopener">catálogo Premium de referencia</a>. Algunos cursos aparecen en más de una categoría.</p>
+<p>10 secciones · 56 entradas en el catálogo</p>
+<label class="search-label">Buscar en este pack<input type="search" id="search" placeholder="Escribe una tecnología o un tema…">
+</label>
+<p id="search-status" role="status">
+</p>
+<div id="syllabus">
+<details>
+<summary>Frontend Development <small>· 19 temas</small>
+</summary>
+<ol>
+<li>
+<strong>HTML - Creación de páginas web</strong>
+<small>Aprende los fundamentos de HTML5 para crear estructuras web semánticas y accesibles.</small>
+</li>
+<li>
+<strong>JavaScript Básico</strong>
+<small>Introducción a la programación con JavaScript: variables, funciones, condicionales y bucles.</small>
+</li>
+<li>
+<strong>Curso de JavaScript</strong>
+<small>Domina JavaScript desde cero hasta nivel avanzado con proyectos prácticos.</small>
+</li>
+<li>
+<strong>Curso de Manipulación del DOM</strong>
+<small>Aprende a interactuar dinámicamente con los elementos de tu página web.</small>
+</li>
+<li>
+<strong>Curso de Responsive Design</strong>
+<small>Diseña sitios web que se adapten perfectamente a cualquier dispositivo.</small>
+</li>
+<li>
+<strong>Curso de Preprocesadores CSS</strong>
+<small>Domina SASS y LESS para escribir CSS más eficiente y mantenible.</small>
+</li>
+<li>
+<strong>Curso de Optimización Web</strong>
+<small>Técnicas avanzadas para mejorar el rendimiento y velocidad de carga de tus sitios.</small>
+</li>
+<li>
+<strong>Curso Práctico de Maquetación en CSS</strong>
+<small>Domina Flexbox, Grid y técnicas modernas de maquetación web.</small>
+</li>
+<li>
+<strong>Curso Frontend Completo</strong>
+<small>Ruta completa para convertirte en desarrollador frontend profesional.</small>
+</li>
+<li>
+<strong>Curso de Web Components con JavaScript</strong>
+<small>Crea componentes reutilizables con la API nativa de Web Components.</small>
+</li>
+<li>
+<strong>Curso de TypeScript</strong>
+<small>JavaScript tipado para aplicaciones más robustas y mantenibles.</small>
+</li>
+<li>
+<strong>Curso de Svelte</strong>
+<small>El framework revolucionario que compila a JavaScript vanilla.</small>
+</li>
+<li>
+<strong>Curso de React.js</strong>
+<small>Aprende la biblioteca más popular para construir interfaces de usuario.</small>
+</li>
+<li>
+<strong>Curso de Angular</strong>
+<small>Framework completo para aplicaciones empresariales escalables.</small>
+</li>
+<li>
+<strong>Angular - Pruebas Unitarias con Jest</strong>
+<small>Aprende a escribir pruebas robustas para tus aplicaciones Angular.</small>
+</li>
+<li>
+<strong>Curso Diseño Web en WordPress</strong>
+<small>Crea sitios web profesionales sin necesidad de programar.</small>
+</li>
+<li>
+<strong>Crear una Página Web con WordPress y Elementor PRO</strong>
+<small>Domina el constructor visual más popular para WordPress.</small>
+</li>
+<li>
+<strong>Astro Framework</strong>
+<small>El framework moderno para construir sitios estáticos rápidos.</small>
+</li>
+<li>
+<strong>Diseño Responsivo, Grid, HTML &amp; CSS</strong>
+<small>Masterclass de diseño web adaptable con las técnicas más modernas.</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Backend Development <small>· 8 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Todo PHP y MySQL, de Básico a Experto</strong>
+<small>Domina el lenguaje de backend más utilizado en la web junto con bases de datos relacionales.</small>
+</li>
+<li>
+<strong>API REST con PHP y MySQL</strong>
+<small>Aprende a construir APIs modernas con autenticación JWT y buenas prácticas.</small>
+</li>
+<li>
+<strong>Curso de NodeJS y Fundamentos</strong>
+<small>JavaScript en el servidor con el runtime más popular del momento.</small>
+</li>
+<li>
+<strong>Curso de C# y .NET Core</strong>
+<small>Desarrollo backend robusto con el framework empresarial de Microsoft.</small>
+</li>
+<li>
+<strong>Aprende Lenguaje C</strong>
+<small>Fundamentos de programación con el lenguaje que dio origen a muchos otros.</small>
+</li>
+<li>
+<strong>Curso de Laravel desde cero</strong>
+<small>El framework PHP más elegante y productivo para desarrollo web.</small>
+</li>
+<li>
+<strong>Sistema de Pedidos con Laravel 11</strong>
+<small>Proyecto práctico para implementar un sistema completo de pedidos.</small>
+</li>
+<li>
+<strong>Desarrollo en Python Avanzado</strong>
+<small>Domina Python para backend, automatización y análisis de datos.</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Full Stack &amp; Frameworks <small>· 5 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Full Stack con Laravel &amp; VueJS</strong>
+<small>Combina el poder de Laravel en backend con Vue.js en frontend.</small>
+</li>
+<li>
+<strong>Inicia con TALL Stack</strong>
+<small>Laravel con Tailwind CSS, Alpine.js y Livewire para desarrollo fullstack moderno.</small>
+</li>
+<li>
+<strong>Tienda Online con React</strong>
+<small>Proyecto completo de e-commerce con carrito de compras y pasarela de pagos.</small>
+</li>
+<li>
+<strong>Curso profesional de Angular</strong>
+<small>Desarrollo fullstack con Angular en frontend y Node.js en backend.</small>
+</li>
+<li>
+<strong>Curso de Ruby on Rails</strong>
+<small>El framework que revolucionó la productividad en desarrollo web.</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Bases de Datos y SQL <small>· 3 temas</small>
+</summary>
+<ol>
+<li>
+<strong>SQL para Principiantes</strong>
+<small>Fundamentos del lenguaje estándar para gestionar bases de datos relacionales.</small>
+</li>
+<li>
+<strong>Aprende SQL desde Cero</strong>
+<small>Desde consultas básicas hasta procedimientos almacenados avanzados.</small>
+</li>
+<li>
+<strong>Power BI desde Cero</strong>
+<small>Crea dashboards y reportes profesionales con la herramienta de Microsoft.</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Diseño Web, UX/UI &amp; WordPress <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Curso Diseño UX/UI desde Cero</strong>
+<small>Principios de experiencia de usuario e interfaz para desarrolladores.</small>
+</li>
+<li>
+<strong>Diseño Web en WordPress</strong>
+<small>Crea sitios profesionales con el CMS más popular del mundo.</small>
+</li>
+<li>
+<strong>Elementor PRO 2024</strong>
+<small>Domina el constructor visual más avanzado para WordPress.</small>
+</li>
+<li>
+<strong>Sistemas de diseño (Básico)</strong>
+<small>Crea sistemas consistentes y escalables para tus proyectos.</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Programación General <small>· 5 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Fundamentos de Programación</strong>
+<small>Bases esenciales para comenzar en el mundo del desarrollo.</small>
+</li>
+<li>
+<strong>Git &amp; GitHub</strong>
+<small>Control de versiones y trabajo colaborativo para desarrolladores.</small>
+</li>
+<li>
+<strong>Kotlin para Android</strong>
+<small>El lenguaje moderno para desarrollo de aplicaciones móviles.</small>
+</li>
+<li>
+<strong>Lenguaje C</strong>
+<small>El lenguaje que sentó las bases de la programación moderna.</small>
+</li>
+<li>
+<strong>Curso de Bootstrap</strong>
+<small>El framework CSS más popular para desarrollo rápido de interfaces.</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Data Science &amp; IA <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>MasterClass Python</strong>
+<small>El lenguaje más versátil para ciencia de datos y automatización.</small>
+</li>
+<li>
+<strong>Machine Learning y Deep Learning</strong>
+<small>Introducción práctica a los algoritmos de aprendizaje automático.</small>
+</li>
+<li>
+<strong>Python para Ciencia de Datos</strong>
+<small>Pandas, NumPy y Matplotlib para análisis y visualización de datos.</small>
+</li>
+<li>
+<strong>Inteligencia Artificial</strong>
+<small>Fundamentos teóricos y prácticos de IA con Python.</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Apps Móviles <small>· 2 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Dart para Flutter</strong>
+<small>Domina el lenguaje Dart para desarrollar con el framework Flutter.</small>
+</li>
+<li>
+<strong>Kotlin para Android</strong>
+<small>Desarrollo nativo de aplicaciones Android con el lenguaje oficial.</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Herramientas &amp; Testing <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Postman</strong>
+<small>Prueba y documenta tus APIs REST como un profesional.</small>
+</li>
+<li>
+<strong>Testing con Jest y Angular</strong>
+<small>Pruebas unitarias y de integración para aplicaciones Angular.</small>
+</li>
+<li>
+<strong>Router SPA con JavaScript</strong>
+<small>Implementa rutas en aplicaciones de una sola página sin frameworks.</small>
+</li>
+<li>
+<strong>Automatización Telegram con Laravel</strong>
+<small>Crea bots y automatiza procesos con la API de Telegram.</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Cursos Introductorios <small>· 2 temas</small>
+</summary>
+<ol>
+<li>
+<strong>React Pro Intermedio</strong>
+<small>Patrones avanzados y mejores prácticas en desarrollo con React.</small>
+</li>
+<li>
+<strong>JavaScript Básico</strong>
+<small>Primeros pasos en el lenguaje más importante de la web.</small>
+</li>
+</ol>
+</details>
+</div>
+</section>
+<section class="wrap section">
+<h2>Estos son los cuatro que recibirás.</h2>
+<div class="packs">
+<article class="pack premium">
+<span class="icon">★</span>
+<p class="eyebrow">PACK 01 · DESTACADO</p>
+<h3>Premium Full</h3>
+<p>La biblioteca protagonista: frontend, backend, IA, diseño y mucho más.</p>
+<p>
+<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
+</p>
+<p class="included" data-included>Disponible por separado</p>
+<a class="button secondary" href="../../pack/premium/Pack-Premium.html">Ver todo el pack Premium Full →</a>
+</article>
+<article class="pack ">
+<span class="icon">Py</span>
+<p class="eyebrow">PACK 02</p>
+<h3>Python</h3>
+<p>De los primeros pasos a proyectos con Python.</p>
+<p>
+<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
+</p>
+<p class="included" data-included>Disponible por separado</p>
+<a class="button secondary" href="../../pack/python/Python.html">Ver todo el pack Python →</a>
+</article>
+<article class="pack ">
+<span class="icon">J</span>
+<p class="eyebrow">PACK 03</p>
+<h3>Java</h3>
+<p>Una ruta de práctica para desarrollar con Java.</p>
+<p>
+<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
+</p>
+<p class="included" data-included>Disponible por separado</p>
+<a class="button secondary" href="../../pack/java/Java.html">Ver todo el pack Java →</a>
+</article>
+<article class="pack ">
+<span class="icon">&lt;/&gt;</span>
+<p class="eyebrow">PACK 04</p>
+<h3>Web Fullstack</h3>
+<p>Interfaces, servidores y bases de datos en una misma ruta.</p>
+<p>
+<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
+</p>
+<p class="included" data-included>Disponible por separado</p>
+<a class="button secondary" href="../../pack/desarrollo-web/Desarrollo-Web.html">Ver todo el pack Web Fullstack →</a>
+</article>
+</div>
+</section>
+</main>
+<footer class="wrap">
+<p>CreaCoders · Aprende a tu ritmo.</p>
+<p>Oferta de 24 horas desde tu primera visita en este navegador. El plazo se guarda en los datos locales y no se reinicia al recargar. Borrar esos datos o cambiar de navegador elimina el registro.</p>
+<p>Compra y entrega del acceso por WhatsApp: <a href="https://wa.me/573026656161">302 665 6161</a>.</p>
+</footer>
+<aside class="sticky" aria-label="Comprar por WhatsApp">
+<div>
+<strong data-sticky-price>4 packs · $40.000</strong>
+<small data-sticky-note>Acceso permanente</small>
+</div>
+<a class="button" data-buy href="https://wa.me/573026656161">Consultar packs →</a>
+</aside>
+<noscript>
+<p class="wrap">Activa JavaScript para comprobar la oferta de primera visita. Puedes consultar los precios por WhatsApp.</p>
+</noscript>
 </body>
 </html>

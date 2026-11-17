@@ -1,0 +1,278 @@
+{
+  "secciones": [
+    {
+      "titulo": "Frontend Development",
+      "clases": [
+        {
+          "nombre": "HTML - Creación de páginas web",
+          "duracion": "Aprende los fundamentos de HTML5 para crear estructuras web semánticas y accesibles."
+        },
+        {
+          "nombre": "JavaScript Básico",
+          "duracion": "Introducción a la programación con JavaScript: variables, funciones, condicionales y bucles."
+        },
+        {
+          "nombre": "Curso de JavaScript",
+          "duracion": "Domina JavaScript desde cero hasta nivel avanzado con proyectos prácticos."
+        },
+        {
+          "nombre": "Curso de Manipulación del DOM",
+          "duracion": "Aprende a interactuar dinámicamente con los elementos de tu página web."
+        },
+        {
+          "nombre": "Curso de Responsive Design",
+          "duracion": "Diseña sitios web que se adapten perfectamente a cualquier dispositivo."
+        },
+        {
+          "nombre": "Curso de Preprocesadores CSS",
+          "duracion": "Domina SASS y LESS para escribir CSS más eficiente y mantenible."
+        },
+        {
+          "nombre": "Curso de Optimización Web",
+          "duracion": "Técnicas avanzadas para mejorar el rendimiento y velocidad de carga de tus sitios."
+        },
+        {
+          "nombre": "Curso Práctico de Maquetación en CSS",
+          "duracion": "Domina Flexbox, Grid y técnicas modernas de maquetación web."
+        },
+        {
+          "nombre": "Curso Frontend Completo",
+          "duracion": "Ruta completa para convertirte en desarrollador frontend profesional."
+        },
+        {
+          "nombre": "Curso de Web Components con JavaScript",
+          "duracion": "Crea componentes reutilizables con la API nativa de Web Components."
+        },
+        {
+          "nombre": "Curso de TypeScript",
+          "duracion": "JavaScript tipado para aplicaciones más robustas y mantenibles."
+        },
+        {
+          "nombre": "Curso de Svelte",
+          "duracion": "El framework revolucionario que compila a JavaScript vanilla."
+        },
+        {
+          "nombre": "Curso de React.js",
+          "duracion": "Aprende la biblioteca más popular para construir interfaces de usuario."
+        },
+        {
+          "nombre": "Curso de Angular",
+          "duracion": "Framework completo para aplicaciones empresariales escalables."
+        },
+        {
+          "nombre": "Angular - Pruebas Unitarias con Jest",
+          "duracion": "Aprende a escribir pruebas robustas para tus aplicaciones Angular."
+        },
+        {
+          "nombre": "Curso Diseño Web en WordPress",
+          "duracion": "Crea sitios web profesionales sin necesidad de programar."
+        },
+        {
+          "nombre": "Crear una Página Web con WordPress y Elementor PRO",
+          "duracion": "Domina el constructor visual más popular para WordPress."
+        },
+        {
+          "nombre": "Astro Framework",
+          "duracion": "El framework moderno para construir sitios estáticos rápidos."
+        },
+        {
+          "nombre": "Diseño Responsivo, Grid, HTML & CSS",
+          "duracion": "Masterclass de diseño web adaptable con las técnicas más modernas."
+        }
+      ]
+    },
+    {
+      "titulo": "Backend Development",
+      "clases": [
+        {
+          "nombre": "Todo PHP y MySQL, de Básico a Experto",
+          "duracion": "Domina el lenguaje de backend más utilizado en la web junto con bases de datos relacionales."
+        },
+        {
+          "nombre": "API REST con PHP y MySQL",
+          "duracion": "Aprende a construir APIs modernas con autenticación JWT y buenas prácticas."
+        },
+        {
+          "nombre": "Curso de NodeJS y Fundamentos",
+          "duracion": "JavaScript en el servidor con el runtime más popular del momento."
+        },
+        {
+          "nombre": "Curso de C# y .NET Core",
+          "duracion": "Desarrollo backend robusto con el framework empresarial de Microsoft."
+        },
+        {
+          "nombre": "Aprende Lenguaje C",
+          "duracion": "Fundamentos de programación con el lenguaje que dio origen a muchos otros."
+        },
+        {
+          "nombre": "Curso de Laravel desde cero",
+          "duracion": "El framework PHP más elegante y productivo para desarrollo web."
+        },
+        {
+          "nombre": "Sistema de Pedidos con Laravel 11",
+          "duracion": "Proyecto práctico para implementar un sistema completo de pedidos."
+        },
+        {
+          "nombre": "Desarrollo en Python Avanzado",
+          "duracion": "Domina Python para backend, automatización y análisis de datos."
+        }
+      ]
+    },
+    {
+      "titulo": "Full Stack & Frameworks",
+      "clases": [
+        {
+          "nombre": "Full Stack con Laravel & VueJS",
+          "duracion": "Combina el poder de Laravel en backend con Vue.js en frontend."
+        },
+        {
+          "nombre": "Inicia con TALL Stack",
+          "duracion": "Laravel con Tailwind CSS, Alpine.js y Livewire para desarrollo fullstack moderno."
+        },
+        {
+          "nombre": "Tienda Online con React",
+          "duracion": "Proyecto completo de e-commerce con carrito de compras y pasarela de pagos."
+        },
+        {
+          "nombre": "Curso profesional de Angular",
+          "duracion": "Desarrollo fullstack con Angular en frontend y Node.js en backend."
+        },
+        {
+          "nombre": "Curso de Ruby on Rails",
+          "duracion": "El framework que revolucionó la productividad en desarrollo web."
+        }
+      ]
+    },
+    {
+      "titulo": "Bases de Datos y SQL",
+      "clases": [
+        {
+          "nombre": "SQL para Principiantes",
+          "duracion": "Fundamentos del lenguaje estándar para gestionar bases de datos relacionales."
+        },
+        {
+          "nombre": "Aprende SQL desde Cero",
+          "duracion": "Desde consultas básicas hasta procedimientos almacenados avanzados."
+        },
+        {
+          "nombre": "Power BI desde Cero",
+          "duracion": "Crea dashboards y reportes profesionales con la herramienta de Microsoft."
+        }
+      ]
+    },
+    {
+      "titulo": "Diseño Web, UX/UI & WordPress",
+      "clases": [
+        {
+          "nombre": "Curso Diseño UX/UI desde Cero",
+          "duracion": "Principios de experiencia de usuario e interfaz para desarrolladores."
+        },
+        {
+          "nombre": "Diseño Web en WordPress",
+          "duracion": "Crea sitios profesionales con el CMS más popular del mundo."
+        },
+        {
+          "nombre": "Elementor PRO 2024",
+          "duracion": "Domina el constructor visual más avanzado para WordPress."
+        },
+        {
+          "nombre": "Sistemas de diseño (Básico)",
+          "duracion": "Crea sistemas consistentes y escalables para tus proyectos."
+        }
+      ]
+    },
+    {
+      "titulo": "Programación General",
+      "clases": [
+        {
+          "nombre": "Fundamentos de Programación",
+          "duracion": "Bases esenciales para comenzar en el mundo del desarrollo."
+        },
+        {
+          "nombre": "Git & GitHub",
+          "duracion": "Control de versiones y trabajo colaborativo para desarrolladores."
+        },
+        {
+          "nombre": "Kotlin para Android",
+          "duracion": "El lenguaje moderno para desarrollo de aplicaciones móviles."
+        },
+        {
+          "nombre": "Lenguaje C",
+          "duracion": "El lenguaje que sentó las bases de la programación moderna."
+        },
+        {
+          "nombre": "Curso de Bootstrap",
+          "duracion": "El framework CSS más popular para desarrollo rápido de interfaces."
+        }
+      ]
+    },
+    {
+      "titulo": "Data Science & IA",
+      "clases": [
+        {
+          "nombre": "MasterClass Python",
+          "duracion": "El lenguaje más versátil para ciencia de datos y automatización."
+        },
+        {
+          "nombre": "Machine Learning y Deep Learning",
+          "duracion": "Introducción práctica a los algoritmos de aprendizaje automático."
+        },
+        {
+          "nombre": "Python para Ciencia de Datos",
+          "duracion": "Pandas, NumPy y Matplotlib para análisis y visualización de datos."
+        },
+        {
+          "nombre": "Inteligencia Artificial",
+          "duracion": "Fundamentos teóricos y prácticos de IA con Python."
+        }
+      ]
+    },
+    {
+      "titulo": "Apps Móviles",
+      "clases": [
+        {
+          "nombre": "Dart para Flutter",
+          "duracion": "Domina el lenguaje Dart para desarrollar con el framework Flutter."
+        },
+        {
+          "nombre": "Kotlin para Android",
+          "duracion": "Desarrollo nativo de aplicaciones Android con el lenguaje oficial."
+        }
+      ]
+    },
+    {
+      "titulo": "Herramientas & Testing",
+      "clases": [
+        {
+          "nombre": "Postman",
+          "duracion": "Prueba y documenta tus APIs REST como un profesional."
+        },
+        {
+          "nombre": "Testing con Jest y Angular",
+          "duracion": "Pruebas unitarias y de integración para aplicaciones Angular."
+        },
+        {
+          "nombre": "Router SPA con JavaScript",
+          "duracion": "Implementa rutas en aplicaciones de una sola página sin frameworks."
+        },
+        {
+          "nombre": "Automatización Telegram con Laravel",
+          "duracion": "Crea bots y automatiza procesos con la API de Telegram."
+        }
+      ]
+    },
+    {
+      "titulo": "Cursos Introductorios",
+      "clases": [
+        {
+          "nombre": "React Pro Intermedio",
+          "duracion": "Patrones avanzados y mejores prácticas en desarrollo con React."
+        },
+        {
+          "nombre": "JavaScript Básico",
+          "duracion": "Primeros pasos en el lenguaje más importante de la web."
+        }
+      ]
+    }
+  ]
+}

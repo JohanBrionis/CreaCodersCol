@@ -1,208 +1,1083 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java en 37 Días - Formación Profesional | CreaCoders</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #e11d48;
-            --primary-soft: #fff1f2;
-            --bg: #ffffff;
-            --bg-soft: #f8f9fb;
-            --text-main: #1a1d23;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --dark-btn: #1a1d23;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding-bottom: 160px; }
-        .container { max-width: 650px; margin: 0 auto; padding: 0 24px; }
-
-        /* HEADER */
-        .hero { padding: 80px 0 40px; text-align: center; background: linear-gradient(180deg, var(--primary-soft) 0%, #ffffff 100%); }
-        .logo-area svg { width: 60px; height: 60px; margin-bottom: 20px; color: var(--primary); }
-        .badge-promo { background: #ffffff; color: var(--primary); padding: 8px 16px; border-radius: 100px; font-weight: 700; font-size: 0.7rem; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-transform: uppercase; letter-spacing: 0.5px; }
-        h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; }
-        h1 span { color: var(--primary); }
-
-        /* OFFER CARD */
-        .offer-card { background: #ffffff; padding: 32px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); margin-bottom: 40px; }
-        .price-tag { font-size: 3rem; font-weight: 800; display: block; letter-spacing: -1px; }
-        .price-label { color: var(--primary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
-
-        /* FEATURE LIST */
-        .features { display: grid; gap: 12px; margin: 40px 0; }
-        .feature-item { display: flex; align-items: center; gap: 12px; background: var(--bg-soft); padding: 16px; border-radius: 16px; border: 1px solid var(--border); }
-        .feature-item svg { width: 20px; height: 20px; color: var(--primary); flex-shrink: 0; }
-        .feature-item p { font-size: 0.9rem; font-weight: 600; color: var(--text-main); }
-
-        /* INSTRUCTORS */
-        .section-title { font-size: 1.4rem; font-weight: 800; margin: 40px 0 20px; text-align: center; }
-        .instructor-card { background: var(--bg-soft); padding: 20px; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 12px; }
-        .instructor-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 4px; }
-        .instructor-card p { font-size: 0.85rem; color: var(--text-muted); }
-
-        /* CURRICULUM */
-        .accordion { display: grid; gap: 12px; }
-        .course-step { border: 1px solid var(--border); border-radius: 16px; }
-        summary { padding: 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 0.95rem; }
-        summary::after { content: '→'; color: var(--primary); transition: 0.3s; }
-        details[open] summary::after { transform: rotate(90deg); }
-        .step-content { padding: 0 20px 20px; border-top: 1px solid var(--bg-soft); }
-        .step-content li { display: flex; justify-content: space-between; padding: 10px 0; font-size: 0.85rem; color: var(--text-muted); border-bottom: 1px solid var(--bg-soft); }
-
-        /* CROSS-SELL PACKS */
-        .other-packs { margin-top: 60px; padding: 40px 0; border-top: 2px solid var(--bg-soft); }
-        .pack-card { background: #ffffff; border: 1px solid var(--border); padding: 20px; border-radius: 20px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-        .pack-info h4 { font-size: 0.95rem; margin-bottom: 4px; }
-        .pack-info p { font-size: 0.75rem; color: var(--text-muted); }
-        .btn-outline { text-decoration: none; font-size: 0.75rem; font-weight: 700; color: var(--primary); border: 1px solid var(--primary); padding: 8px 16px; border-radius: 8px; transition: 0.2s; }
-        .btn-outline:hover { background: var(--primary); color: white; }
-
-        /* PROMO BOX */
-        .promo-banner { background: var(--dark-btn); color: white; padding: 32px; border-radius: 24px; text-align: center; margin-top: 20px; }
-        .promo-tag { background: var(--primary); font-size: 0.7rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; display: inline-block; }
-
-        /* STICKY CTA */
-        .sticky-cta { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 48px); max-width: 500px; z-index: 1000; }
-        .btn-whatsapp { background: var(--dark-btn); color: white; text-decoration: none; padding: 20px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 20px 25px rgba(0,0,0,0.15); border-bottom: 4px solid var(--primary); }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pack Java | CreaCoders</title>
+<meta name="description" content="Explora los cuatro packs de CreaCoders: Premium, Python, Java y Web Fullstack. Acceso permanente y compra por WhatsApp.">
+<link rel="stylesheet" href="../../css/index.css">
+<script defer src="../../js/offer.js">
+</script>
 </head>
-<body>
-
-    <a href="/../index.html" style="position: fixed; top: 20px; left: 20px; z-index: 9999; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #e2e8f0; color: #1a1d23; text-decoration: none; padding: 10px 16px; border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-    Volver
+<body data-pack="Java">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="nav wrap">
+<a class="brand" href="../../index.html">&lt;/&gt; creacoders<span>APRENDE. CREA. AVANZA.</span>
 </a>
-
-    <header class="hero">
-        <div class="container">
-            <div class="logo-area">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-            </div>
-            <div class="badge-promo">Libro de Texto Digital Incluido</div>
-            <h1>Java Profesional en<br><span>37 Días de Práctica.</span></h1>
-            <p style="color: var(--text-muted); margin-bottom: 30px;">Portafolio con 5 proyectos reales y preparación intensiva para entrevistas técnicas.</p>
-            
-            <div class="offer-card">
-                <span class="price-label">Acceso Permanente</span>
-                <span class="price-tag">$10.000 COP</span>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Un único pago. Sin suscripciones.</p>
-            </div>
-        </div>
-    </header>
-
-    <main class="container">
-        <div class="features">
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <p>5 Proyectos escalables para tu portafolio</p>
-            </div>
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <p>Módulo especial de preparación para entrevistas</p>
-            </div>
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <p>Desarrollo Backend con SpringBoot y SQL</p>
-            </div>
-        </div>
-
-        <h3 class="section-title">Instructores</h3>
-        <div class="instructor-card">
-            <h4>Álvaro Chirou</h4>
-            <p>Especialista en Seguridad y Desarrollo. +20 años de trayectoria y 500k alumnos internacionales.</p>
-        </div>
-        <div class="instructor-card">
-            <h4>Walter Coto</h4>
-            <p>Arquitecto de Software enfocado en educación de alto rendimiento en Udemy.</p>
-        </div>
-
-        <h3 class="section-title">Contenido del Programa</h3>
-        <p id="course-summary" style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;"></p>
-        <div class="accordion" id="course-accordion"></div>
-
-        <section class="other-packs">
-            <h3 class="section-title" style="margin-bottom: 30px;">También te podría interesar</h3>
-            
-            <div class="pack-card">
-                <div class="pack-info">
-                    <h4>Pack Desarrollo Web Fullstack</h4>
-                    <p>Dominio total de Frontend y Backend.</p>
-                </div>
-                <div style="text-align: right;">
-                    <p style="font-weight: 800; font-size: 0.9rem; margin-bottom: 8px;">$10.000</p>
-                    <a href="/pack/desarrollo-web/Desarrollo-Web.html" class="btn-outline">Ver detalles</a>
-                </div>
-            </div>
-
-            <div class="pack-card">
-                <div class="pack-info">
-                    <h4>Pack Python Practicando</h4>
-                    <p>De cero absoluto a desarrollador pro.</p>
-                </div>
-                <div style="text-align: right;">
-                    <p style="font-weight: 800; font-size: 0.9rem; margin-bottom: 8px;">$10.000</p>
-                    <a href="/pack/python/Python.html" class="btn-outline">Ver detalles</a>
-                </div>
-            </div>
-
-            <div class="pack-card" style="border-color: var(--primary);">
-                <div class="pack-info">
-                    <h4>Pack Premium (+60 Cursos)</h4>
-                    <p>Acceso total a nuestra biblioteca tech.</p>
-                </div>
-                <div style="text-align: right;">
-                    <p style="font-weight: 800; font-size: 0.9rem; margin-bottom: 8px;">$15.000</p>
-                    <a href="/pack/premium/Pack-Premium.html" class="btn-outline" style="background: var(--primary); color: white;">Ver detalles</a>
-                </div>
-            </div>
-
-            <div class="promo-banner">
-                <span class="promo-tag">OFERTA DE BUNDLES</span>
-                <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 8px;">Combina y ahorra en tu formación:</p>
-                <h4 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 4px;">2 PACKS x $16.000 COP</h4>
-                <p style="font-size: 1.2rem; color: #ffffff;">JAVA + PREMIUM (+60 Cursos) x $20.000</p>
-            </div>
-        </section>
-    </main>
-
-    <div class="sticky-cta">
-        <a href="https://wa.me/573019478430?text=Hola!%20Vengo%20de%20CreaCoders%20y%20quiero%20el%20Pack%20Java%20por%20$10.000" class="btn-whatsapp">
-            <span style="font-size: 0.75rem; opacity: 0.8; font-weight: 600; margin-bottom: 4px;">PAGO ÚNICO - COLOMBIA</span>
-            <span class="main">Comprar por WhatsApp →</span>
-        </a>
-    </div>
-
-    <script>
-        async function loadContent() {
-            const accordion = document.getElementById('course-accordion');
-            const summaryText = document.getElementById('course-summary');
-            try {
-                const res = await fetch('temario-java.json');
-                const data = await res.json();
-                summaryText.innerText = `${data.totalSecciones} Módulos • ${data.totalClases} Lecciones • ${data.duracionTotal}`;
-                accordion.innerHTML = data.secciones.map(sec => `
-                    <details class="course-step">
-                        <summary>
-                            <div style="display:grid">
-                                <span>${sec.titulo}</span>
-                                <small style="font-weight:400; font-size:0.75rem; color:var(--text-muted);">${sec.clasesInfo}</small>
-                            </div>
-                        </summary>
-                        <div class="step-content">
-                            <ul>
-                                ${sec.clases.map(c => `<li>${c.nombre} <span>${c.duracion}</span></li>`).join('')}
-                            </ul>
-                        </div>
-                    </details>
-                `).join('');
-            } catch (e) { summaryText.innerText = "Temario disponible en el soporte de WhatsApp."; }
-        }
-        document.addEventListener('DOMContentLoaded', loadContent);
-    </script>
+<a class="button secondary" href="../../index.html#packs">Ver los 4 packs</a>
+</header>
+<main id="contenido">
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<a href="../../index.html#packs">← Volver a los 4 packs</a>
+<p class="eyebrow">INCLUIDO EN EL COMBO DE 4 PACKS</p>
+<h1>Pack Java</h1>
+<p class="lead">Una ruta de práctica para desarrollar con Java.</p>
+<p>Valor individual: <strong>$10.000 COP</strong>
+</p>
+<a class="button secondary" href="#temario">Ver contenido ↓</a>
+</div>
+<section class="offer" aria-label="Precio de los cuatro packs">
+<p class="eyebrow" data-offer-title>LOS 4 PACKS · ACCESO PERMANENTE</p>
+<p class="price" data-price>$40.000 <small>COP</small>
+</p>
+<p data-saving>Precio normal: $10.000 por pack.</p>
+<p class="timer" role="timer" aria-label="Tiempo restante de la oferta" data-timer>Comprobando oferta…</p>
+<p data-deadline>
+</p>
+<a class="button" data-buy href="https://wa.me/573026656161">Consultar los 4 packs por WhatsApp →</a>
+<p class="fine">Un solo pago. Acceso permanente a los cuatro packs.</p>
+</section>
+</div>
+</section>
+<section class="wrap section" id="temario">
+<p class="eyebrow">EXPLORA A TU RITMO</p>
+<h2>Todo lo que incluye Java</h2>
+<p>41 secciones · 179 temas</p>
+<label class="search-label">Buscar en este pack<input type="search" id="search" placeholder="Escribe una tecnología o un tema…">
+</label>
+<p id="search-status" role="status">
+</p>
+<div id="syllabus">
+<details>
+<summary>Sobre el curso <small>· 2 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Descubre si es para ti el curso y consejos para una mejor experiencia</strong>
+<small>08:30</small>
+</li>
+<li>
+<strong>Recuerda que cuentas con nuestro asesoramiento y respuestas a tus preguntas</strong>
+<small>3:10</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Libro del curso <small>· 1 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Como usar el libro y su utilidad</strong>
+<small>3:00</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 1: Instalacion de herramientas <small>· 3 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Instalación de JDK Java</strong>
+<small>5:56</small>
+</li>
+<li>
+<strong>Instalación de NetBeans</strong>
+<small>7:40</small>
+</li>
+<li>
+<strong>Recorrido por NetBeans</strong>
+<small>12:48</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 2: Conozcamos de java <small>· 1 temas</small>
+</summary>
+<ol>
+<li>
+<strong>¿Que es java?</strong>
+<small>7:29</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 3: Primeros pasos con Java <small>· 6 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Hola mundo</strong>
+<small>10:41</small>
+</li>
+<li>
+<strong>Variables y tipos de datos (Teoria)</strong>
+<small>10:09</small>
+</li>
+<li>
+<strong>Variables y tipos de datos</strong>
+<small>10:09</small>
+</li>
+<li>
+<strong>Comentarios en Java</strong>
+<small>9:03</small>
+</li>
+<li>
+<strong>Reglas y consejos para declarar variables</strong>
+<small>14:37</small>
+</li>
+<li>
+<strong>Constantes</strong>
+<small>13:00</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 4: Operadores aritemticos <small>· 7 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Numeros</strong>
+<small>12:15</small>
+</li>
+<li>
+<strong>Operadores aritmeticos y jerarquia de operaciones</strong>
+<small>10:10</small>
+</li>
+<li>
+<strong>Operadores aritmeticos</strong>
+<small>10:44</small>
+</li>
+<li>
+<strong>Jerarquia de operaciones</strong>
+<small>11:53</small>
+</li>
+<li>
+<strong>Ejercicios</strong>
+<small>0:18</small>
+</li>
+<li>
+<strong>Ejercicio 1</strong>
+<small>10:55</small>
+</li>
+<li>
+<strong>Ejercicio 2</strong>
+<small>8:22</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 5: Cadenas de texto <small>· 7 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Cadena de texto (teoria)</strong>
+<small>9:00</small>
+</li>
+<li>
+<strong>Cadena de texto</strong>
+<small>9:53</small>
+</li>
+<li>
+<strong>Debanando de cadenas</strong>
+<small>11:34</small>
+</li>
+<li>
+<strong>Metodos de cadenas</strong>
+<small>11:54</small>
+</li>
+<li>
+<strong>Ejercicios</strong>
+<small>0:17</small>
+</li>
+<li>
+<strong>Ejercicios 1</strong>
+<small>9:17</small>
+</li>
+<li>
+<strong>Ejercicios 2</strong>
+<small>7:26</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 6: Toma de datos del usuario <small>· 3 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Tomando datos del usuario usando Scanner</strong>
+<small>9:00</small>
+</li>
+<li>
+<strong>Segundo ejemplo usando la libreria Scanner</strong>
+<small>9:27</small>
+</li>
+<li>
+<strong>Usando JOptions para pedir datos al usuario</strong>
+<small>7:41</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 7: Booleanos <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Booleanos</strong>
+<small>5:00</small>
+</li>
+<li>
+<strong>Operadores Relacionales y logicos (teoria)</strong>
+<small>13:25</small>
+</li>
+<li>
+<strong>Operadores Relacionales</strong>
+<small>12:11</small>
+</li>
+<li>
+<strong>Operadores Logicos</strong>
+<small>12:17</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 8: Condicionales <small>· 14 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Condiconales (teoria)</strong>
+<small>7:25</small>
+</li>
+<li>
+<strong>If y else</strong>
+<small>8:14</small>
+</li>
+<li>
+<strong>Else if</strong>
+<small>10:11</small>
+</li>
+<li>
+<strong>Condicionales aniadados</strong>
+<small>13:56</small>
+</li>
+<li>
+<strong>Ejercicios</strong>
+<small>0:18</small>
+</li>
+<li>
+<strong>Ejercicio 1</strong>
+<small>12:02</small>
+</li>
+<li>
+<strong>Ejercicio 2</strong>
+<small>9:54</small>
+</li>
+<li>
+<strong>Ejercicios</strong>
+<small>0:34</small>
+</li>
+<li>
+<strong>Ejercicio 3</strong>
+<small>12:41</small>
+</li>
+<li>
+<strong>Ejercicio 4</strong>
+<small>11:11</small>
+</li>
+<li>
+<strong>Switch</strong>
+<small>9:30</small>
+</li>
+<li>
+<strong>Ejercicios</strong>
+<small>0:17</small>
+</li>
+<li>
+<strong>Ejercicio 5</strong>
+<small>9:20</small>
+</li>
+<li>
+<strong>Ejercicio 6</strong>
+<small>8:46</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 9: Estructuras de Datos <small>· 8 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Arrays (Arreglos)</strong>
+<small>12:30</small>
+</li>
+<li>
+<strong>Listas (List)</strong>
+<small>14:54</small>
+</li>
+<li>
+<strong>Conjuntos (Set)</strong>
+<small>9:58</small>
+</li>
+<li>
+<strong>Mapa (Map)</strong>
+<small>12:38</small>
+</li>
+<li>
+<strong>Ejercicios</strong>
+<small>0:22</small>
+</li>
+<li>
+<strong>Ejercicio 1</strong>
+<small>7:16</small>
+</li>
+<li>
+<strong>Ejercicio 2</strong>
+<small>9:22</small>
+</li>
+<li>
+<strong>Ejercicio 3</strong>
+<small>11:16</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 10: Bucles <small>· 12 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Bucles (Teoria)</strong>
+<small>8:55</small>
+</li>
+<li>
+<strong>Bucle While</strong>
+<small>9:30</small>
+</li>
+<li>
+<strong>Ejercicios</strong>
+<small>0:14</small>
+</li>
+<li>
+<strong>Ejercicio 1</strong>
+<small>8:02</small>
+</li>
+<li>
+<strong>Ejercicio 2</strong>
+<small>6:18</small>
+</li>
+<li>
+<strong>Bucle For</strong>
+<small>12:40</small>
+</li>
+<li>
+<strong>Bucle For Each</strong>
+<small>13:19</small>
+</li>
+<li>
+<strong>Bucle Do While</strong>
+<small>9:20</small>
+</li>
+<li>
+<strong>Ejercicios</strong>
+<small>0:16</small>
+</li>
+<li>
+<strong>Ejercicio 3</strong>
+<small>10:31</small>
+</li>
+<li>
+<strong>Ejercicio 4</strong>
+<small>9:20</small>
+</li>
+<li>
+<strong>Break y Continue</strong>
+<small>9:23</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 11: Funciones <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Funciones (Teoria)</strong>
+<small>5:04</small>
+</li>
+<li>
+<strong>Funciones</strong>
+<small>9:24</small>
+</li>
+<li>
+<strong>Parámetros y Argumentos</strong>
+<small>8:37</small>
+</li>
+<li>
+<strong>Return</strong>
+<small>7:17</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 12: POO (Programación Orientada a Objetos) <small>· 5 temas</small>
+</summary>
+<ol>
+<li>
+<strong>¿Qué es POO?</strong>
+<small>14:32</small>
+</li>
+<li>
+<strong>Creando Objetos</strong>
+<small>10:46</small>
+</li>
+<li>
+<strong>Creando atributos y métodos</strong>
+<small>13:00</small>
+</li>
+<li>
+<strong>Utilizando parámetros</strong>
+<small>12:03</small>
+</li>
+<li>
+<strong>Retorno de valores usando los métodos</strong>
+<small>9:31</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 13: Método Constructor <small>· 5 temas</small>
+</summary>
+<ol>
+<li>
+<strong>¿Qué es el método Constructor?</strong>
+<small>6:32</small>
+</li>
+<li>
+<strong>Usando el método constructor</strong>
+<small>9:11</small>
+</li>
+<li>
+<strong>Sobrecarga de método constructor y métodos tradicionales</strong>
+<small>9:27</small>
+</li>
+<li>
+<strong>Modificadores de acceso</strong>
+<small>8:38</small>
+</li>
+<li>
+<strong>Constantes en POO</strong>
+<small>8:05</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 14: Herencia <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>¿Qué es Herencia?</strong>
+<small>9:01</small>
+</li>
+<li>
+<strong>Práctica con herencia</strong>
+<small>14:31</small>
+</li>
+<li>
+<strong>Clases abstractas</strong>
+<small>9:55</small>
+</li>
+<li>
+<strong>Polimorfismo</strong>
+<small>16:08</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 15: Encapsulamiento <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>¿Qué es Encapsulamiento?</strong>
+<small>8:35</small>
+</li>
+<li>
+<strong>Demostración de encapsulamiento</strong>
+<small>13:31</small>
+</li>
+<li>
+<strong>Métodos estáticos</strong>
+<small>7:03</small>
+</li>
+<li>
+<strong>Sobrescritura de métodos</strong>
+<small>7:23</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 16: Manejo de excepciones <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>¿Qué es manejo de excepciones?</strong>
+<small>7:56</small>
+</li>
+<li>
+<strong>Miremos nuestras primeras excepciones</strong>
+<small>8:59</small>
+</li>
+<li>
+<strong>Excepciones verificadas primera forma</strong>
+<small>7:09</small>
+</li>
+<li>
+<strong>Try Catch</strong>
+<small>13:37</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 17: Ventanas Graficas en Java <small>· 3 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Creando nuestra primera ventana grafica</strong>
+<small>9:45</small>
+</li>
+<li>
+<strong>Modificando nuestra ventana</strong>
+<small>6:16</small>
+</li>
+<li>
+<strong>Establecer un tamaño mínimo y fondo</strong>
+<small>8:08</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 18: Paneles dentro de Java <small>· 5 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Agregando nuestro primer panel</strong>
+<small>10:19</small>
+</li>
+<li>
+<strong>Agregando etiquetas</strong>
+<small>9:46</small>
+</li>
+<li>
+<strong>Agregando fondo y color a nuestras etiquetas</strong>
+<small>7:09</small>
+</li>
+<li>
+<strong>Estableciendo ubicación al contenido</strong>
+<small>6:12</small>
+</li>
+<li>
+<strong>Modificando fuentes de nuestra etiqueta</strong>
+<small>9:14</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 19: Imágenes en Java <small>· 2 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Agregando imágenes a nuestra ventana</strong>
+<small>13:39</small>
+</li>
+<li>
+<strong>Modificando tamaño de nuestras imágenes</strong>
+<small>10:09</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 20: Botones y caja de textos en Java <small>· 5 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Creando nuestro primer botón</strong>
+<small>10:50</small>
+</li>
+<li>
+<strong>Añadiendo imágenes a un botón</strong>
+<small>6:19</small>
+</li>
+<li>
+<strong>Creando Radiobotones</strong>
+<small>13:36</small>
+</li>
+<li>
+<strong>Creando una caja de texto</strong>
+<small>10:14</small>
+</li>
+<li>
+<strong>Creando un TextArea</strong>
+<small>8:49</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 21: Eventos <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Ordenando componentes</strong>
+<small>11:21</small>
+</li>
+<li>
+<strong>Creando nuestro primer evento</strong>
+<small>8:50</small>
+</li>
+<li>
+<strong>Capturando eventos del Mouse</strong>
+<small>16:51</small>
+</li>
+<li>
+<strong>Capturando eventos del teclado</strong>
+<small>11:05</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 22: Archivos en Java <small>· 3 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Creando un archivo con Java</strong>
+<small>12:50</small>
+</li>
+<li>
+<strong>Primera forma de leer datos de un archivo</strong>
+<small>8:49</small>
+</li>
+<li>
+<strong>Segunda forma de leer datos de un archivo</strong>
+<small>6:04</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 23: Java SQL (JDBC) <small>· 8 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Instalación MySQL</strong>
+<small>7:47</small>
+</li>
+<li>
+<strong>Cláusulas INSERT y SELECT</strong>
+<small>12:26</small>
+</li>
+<li>
+<strong>Cláusulas DELETE y UPDATE</strong>
+<small>9:52</small>
+</li>
+<li>
+<strong>Conectar Java con MySQL</strong>
+<small>17:42</small>
+</li>
+<li>
+<strong>Pedir datos a MYSQL desde Java</strong>
+<small>20:25</small>
+</li>
+<li>
+<strong>Insertar datos a MYSQL desde Java</strong>
+<small>20:23</small>
+</li>
+<li>
+<strong>Actualizar datos en MYSQL desde Java</strong>
+<small>14:46</small>
+</li>
+<li>
+<strong>Eliminar datos en MYSQL desde Java</strong>
+<small>12:24</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 24: Java Swing <small>· 2 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Java Swing</strong>
+<small>10:35</small>
+</li>
+<li>
+<strong>Evento en Java Swing</strong>
+<small>13:09</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 25: Proyecto calculadora <small>· 6 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Introducción al proyecto</strong>
+<small>1:14</small>
+</li>
+<li>
+<strong>Empezamos la calculadora</strong>
+<small>9:04</small>
+</li>
+<li>
+<strong>Modificamos la parte grafica</strong>
+<small>9:14</small>
+</li>
+<li>
+<strong>Agregamos los botones</strong>
+<small>11:26</small>
+</li>
+<li>
+<strong>Parte lógica de la calculadora</strong>
+<small>14:43</small>
+</li>
+<li>
+<strong>Terminando Calculadora</strong>
+<small>17:56</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 26: Proyecto Inicio de sesión <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Iniciamos proyecto de login</strong>
+<small>11:41</small>
+</li>
+<li>
+<strong>Conectamos a la base de datos</strong>
+<small>16:01</small>
+</li>
+<li>
+<strong>Validamos datos de login</strong>
+<small>12:20</small>
+</li>
+<li>
+<strong>Finalizando proyecto Login</strong>
+<small>11:58</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 27: Proyecto Gestión de Usuarios <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Iniciando el Gestor</strong>
+<small>16:59</small>
+</li>
+<li>
+<strong>Conexión a base de datos</strong>
+<small>10:08</small>
+</li>
+<li>
+<strong>Creamos interfaz DAO</strong>
+<small>17:53</small>
+</li>
+<li>
+<strong>Últimas peticiones al gestor</strong>
+<small>24:30</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 28: Proyecto Sistema de Inventario <small>· 7 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Iniciando proyecto inventarios</strong>
+<small>14:17</small>
+</li>
+<li>
+<strong>Panel secundario</strong>
+<small>15:41</small>
+</li>
+<li>
+<strong>Vista de productos</strong>
+<small>12:05</small>
+</li>
+<li>
+<strong>Creación de base de datos</strong>
+<small>7:54</small>
+</li>
+<li>
+<strong>Interfaz DAO</strong>
+<small>12:38</small>
+</li>
+<li>
+<strong>Mostrando productos</strong>
+<small>14:17</small>
+</li>
+<li>
+<strong>Finalizando proyecto</strong>
+<small>10:08</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 29: Ejercicios para entrevistas <small>· 2 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Primer ejercicio entrevistas</strong>
+<small>12:48</small>
+</li>
+<li>
+<strong>Segundo ejercicio entrevistas</strong>
+<small>15:48</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 30: Framework Spring <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Crear proyecto SpringBoot forma 1</strong>
+<small>12:04</small>
+</li>
+<li>
+<strong>Crear proyecto SpringBoot forma 2</strong>
+<small>11:06</small>
+</li>
+<li>
+<strong>Hola Mundo Spring</strong>
+<small>8:20</small>
+</li>
+<li>
+<strong>Logs en SpringBoot</strong>
+<small>9:25</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 31: Rutas GET en SpringBoot <small>· 5 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Primera ruta</strong>
+<small>6:36</small>
+</li>
+<li>
+<strong>Múltiples rutas GET</strong>
+<small>6:59</small>
+</li>
+<li>
+<strong>Parámetros en rutas</strong>
+<small>5:02</small>
+</li>
+<li>
+<strong>Templates</strong>
+<small>9:56</small>
+</li>
+<li>
+<strong>Otra forma de pasar parámetros</strong>
+<small>11:44</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 32: Rutas POST en SpringBoot <small>· 3 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Peticiones POST</strong>
+<small>5:34</small>
+</li>
+<li>
+<strong>Datos a través de POST</strong>
+<small>9:10</small>
+</li>
+<li>
+<strong>Modelo de datos</strong>
+<small>13:32</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 33: HTTP Request <small>· 3 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Primer HTTP Request</strong>
+<small>10:27</small>
+</li>
+<li>
+<strong>Excepciones HTTP</strong>
+<small>10:07</small>
+</li>
+<li>
+<strong>Segunda forma de manejar excepciones</strong>
+<small>11:26</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 34: Data JSON <small>· 2 temas</small>
+</summary>
+<ol>
+<li>
+<strong>JSON en SpringBoot</strong>
+<small>12:01</small>
+</li>
+<li>
+<strong>JSON en SpringBoot parte 2</strong>
+<small>6:27</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 35: Servicios y Beans <small>· 4 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Primer servicio</strong>
+<small>19:05</small>
+</li>
+<li>
+<strong>Inyección de dependencias</strong>
+<small>11:21</small>
+</li>
+<li>
+<strong>Beans en SpringBoot</strong>
+<small>13:00</small>
+</li>
+<li>
+<strong>Anotación @Component</strong>
+<small>7:36</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 36: Test de tu Aplicación <small>· 2 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Primer test de integración</strong>
+<small>19:44</small>
+</li>
+<li>
+<strong>Segundo test de integración</strong>
+<small>23:38</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Dia 37: Proyecto REST API <small>· 5 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Iniciamos nuestro proyecto API</strong>
+<small>10:36</small>
+</li>
+<li>
+<strong>Creamos nuestra primera entidad</strong>
+<small>14:29</small>
+</li>
+<li>
+<strong>Servicio para gestionar la API</strong>
+<small>19:16</small>
+</li>
+<li>
+<strong>Método DELETE y buenas prácticas</strong>
+<small>10:21</small>
+</li>
+<li>
+<strong>Finalizando nuestra API</strong>
+<small>10:29</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Despedida <small>· 1 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Sobre su profesor y equipo de trabajo</strong>
+<small>4:02</small>
+</li>
+</ol>
+</details>
+<details>
+<summary>Bonus Extra <small>· 1 temas</small>
+</summary>
+<ol>
+<li>
+<strong>Clase extra</strong>
+<small>2:43</small>
+</li>
+</ol>
+</details>
+</div>
+</section>
+<section class="wrap section">
+<h2>Estos son los cuatro que recibirás.</h2>
+<div class="packs">
+<article class="pack premium">
+<span class="icon">★</span>
+<p class="eyebrow">PACK 01 · DESTACADO</p>
+<h3>Premium Full</h3>
+<p>La biblioteca protagonista: frontend, backend, IA, diseño y mucho más.</p>
+<p>
+<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
+</p>
+<p class="included" data-included>Disponible por separado</p>
+<a class="button secondary" href="../../pack/premium/Pack-Premium.html">Ver todo el pack Premium Full →</a>
+</article>
+<article class="pack ">
+<span class="icon">Py</span>
+<p class="eyebrow">PACK 02</p>
+<h3>Python</h3>
+<p>De los primeros pasos a proyectos con Python.</p>
+<p>
+<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
+</p>
+<p class="included" data-included>Disponible por separado</p>
+<a class="button secondary" href="../../pack/python/Python.html">Ver todo el pack Python →</a>
+</article>
+<article class="pack ">
+<span class="icon">J</span>
+<p class="eyebrow">PACK 03</p>
+<h3>Java</h3>
+<p>Una ruta de práctica para desarrollar con Java.</p>
+<p>
+<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
+</p>
+<p class="included" data-included>Disponible por separado</p>
+<a class="button secondary" href="../../pack/java/Java.html">Ver todo el pack Java →</a>
+</article>
+<article class="pack ">
+<span class="icon">&lt;/&gt;</span>
+<p class="eyebrow">PACK 04</p>
+<h3>Web Fullstack</h3>
+<p>Interfaces, servidores y bases de datos en una misma ruta.</p>
+<p>
+<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
+</p>
+<p class="included" data-included>Disponible por separado</p>
+<a class="button secondary" href="../../pack/desarrollo-web/Desarrollo-Web.html">Ver todo el pack Web Fullstack →</a>
+</article>
+</div>
+</section>
+</main>
+<footer class="wrap">
+<p>CreaCoders · Aprende a tu ritmo.</p>
+<p>Oferta de 24 horas desde tu primera visita en este navegador. El plazo se guarda en los datos locales y no se reinicia al recargar. Borrar esos datos o cambiar de navegador elimina el registro.</p>
+<p>Compra y entrega del acceso por WhatsApp: <a href="https://wa.me/573026656161">302 665 6161</a>.</p>
+</footer>
+<aside class="sticky" aria-label="Comprar por WhatsApp">
+<div>
+<strong data-sticky-price>4 packs · $40.000</strong>
+<small data-sticky-note>Acceso permanente</small>
+</div>
+<a class="button" data-buy href="https://wa.me/573026656161">Consultar packs →</a>
+</aside>
+<noscript>
+<p class="wrap">Activa JavaScript para comprobar la oferta de primera visita. Puedes consultar los precios por WhatsApp.</p>
+</noscript>
 </body>
 </html>
