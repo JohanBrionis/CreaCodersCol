@@ -20,6 +20,13 @@
     const seconds = Math.ceil(remaining / 1000);
     const clock = [Math.floor(seconds / 3600), Math.floor(seconds % 3600 / 60), seconds % 60].map(n => String(n).padStart(2, '0')).join(':');
     all('[data-price]', el => el.textContent = price + ' COP');
+    all('[data-cart-headline]', el => el.textContent = active ? 'Todo por $10.000.' : 'Todo por $40.000.');
+    all('[data-item-price]', el => el.textContent = active ? '$2.500' : '$10.000');
+    all('[data-item-original]', el => el.hidden = !active);
+    all('[data-item-discount]', el => el.textContent = active ? '−75% en el combo' : 'Precio normal');
+    all('[data-discount-row]', el => el.hidden = !active);
+    all('[data-allocation]', el => el.textContent = active ? 'Solo $2.500 por pack dentro del combo. Los 4 se compran juntos por $10.000 COP.' : 'Los 4 packs juntos por $40.000 COP. Acceso permanente.');
+
     all('[data-offer-title]', el => el.textContent = active ? 'OFERTA ACTIVA · LOS 4 PACKS' : 'LOS 4 PACKS · PRECIO NORMAL');
     all('[data-saving]', el => el.textContent = active ? 'Valor por separado: $40.000 COP. Ahorras $30.000 (75%).' : '$10.000 COP cada pack · $40.000 COP por los cuatro.');
     all('[data-timer]', el => el.textContent = active ? 'Termina en ' + clock : started === null ? 'Oferta no disponible sin un registro local válido.' : 'Tu oferta de 24 horas ha terminado.');
@@ -28,9 +35,9 @@
     all('[data-included]', el => el.textContent = active ? '✓ Incluido: los 4 por $10.000 COP' : 'Disponible por $10.000 COP');
     all('[data-sticky-price]', el => el.textContent = '4 packs · ' + price + ' COP');
     all('[data-sticky-note]', el => el.textContent = active ? 'Te quedan ' + clock : 'Acceso permanente · precio normal');
-    const message = active ? 'Hola, quiero tomar la oferta de los 4 packs (Premium, Python, Java y Web Fullstack) por $10.000 COP en total, con acceso permanente.' : 'Hola, quiero información para comprar los packs de CreaCoders a $10.000 COP cada uno (los cuatro por $40.000 COP).';
+    const message = active ? 'Hola, quiero tomar la oferta de los 4 packs (Premium, Python, Java y Web Fullstack) por $10.000 COP en total, con acceso permanente.' : 'Hola, quiero comprar el combo completo de los 4 packs (Premium, Python, Java y Web Fullstack) por $40.000 COP en total, con acceso permanente.';
     all('[data-buy]', el => {
-      el.textContent = active ? 'Tomar oferta por $10.000 →' : 'Comprar / elegir packs →';
+      el.textContent = active ? 'Llevarme los 4 por $10.000 →' : 'Comprar combo por WhatsApp →';
       el.href = 'https://wa.me/573026656161?text=' + encodeURIComponent(message);
     });
   }

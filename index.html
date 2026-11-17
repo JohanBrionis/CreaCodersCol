@@ -9,137 +9,156 @@
 <script defer src="js/offer.js">
 </script>
 </head>
-<body data-pack="">
+<body class="cart-page">
 <a class="skip" href="#contenido">Saltar al contenido</a>
-<header class="nav wrap">
-<a class="brand" href="index.html">&lt;/&gt; creacoders<span>APRENDE. CREA. AVANZA.</span>
-</a>
-<a class="button secondary" href="index.html#packs">Ver los 4 packs</a>
+<header class="wrap cart-nav">
+<a class="brand" href="index.html">&lt;/&gt; creacoders</a>
+<span>Un pago · acceso permanente</span>
 </header>
-<main id="contenido">
-<section class="hero">
-<div class="wrap hero-grid">
+<main id="contenido" class="wrap checkout">
+<section class="cart-heading">
+<p class="eyebrow">TU COMBO COMPLETO · 4 PACKS INCLUIDOS</p>
+<h1>Los cuatro packs.<br>
+<span data-cart-headline>Un solo pago.</span>
+</h1>
+<p>Premium + Python + Java + Web Fullstack.<br>Te llevas <strong>todos</strong>, con acceso permanente.</p>
+<div class="cart-banner">
+<span aria-hidden="true">◷</span>
 <div>
-<p class="eyebrow">TU SIGUIENTE NIVEL EMPIEZA AQUÍ</p>
-<h1>Cuatro packs.<br>Un gran comienzo.</h1>
-<p class="lead">Premium, Python, Java y Web Fullstack. Todo para aprender a tu ritmo, con acceso permanente.</p>
-<p class="activation" data-activation>Tu oferta de bienvenida se comprueba al abrir esta página.</p>
-<a class="button secondary" href="#packs">Explorar lo que recibiré ↓</a>
+<strong data-offer-title>COMPROBANDO TU OFERTA</strong>
+<span data-timer role="timer" aria-label="Tiempo restante de la oferta">Un momento…</span>
 </div>
-<section class="offer" aria-label="Precio de los cuatro packs">
-<p class="eyebrow" data-offer-title>LOS 4 PACKS · ACCESO PERMANENTE</p>
-<p class="price" data-price>$40.000 <small>COP</small>
-</p>
-<p data-saving>Precio normal: $10.000 por pack.</p>
-<p class="timer" role="timer" aria-label="Tiempo restante de la oferta" data-timer>Comprobando oferta…</p>
-<p data-deadline>
-</p>
-<a class="button" data-buy href="https://wa.me/573026656161">Consultar los 4 packs por WhatsApp →</a>
-<p class="fine">Un solo pago. Acceso permanente a los cuatro packs.</p>
-</section>
 </div>
 </section>
-<section class="wrap section" id="packs">
-<p class="eyebrow">4 DE 4 · TODO EN UN SOLO COMBO</p>
-<h2>Abre cada pack. Descubre todo.</h2>
-<p>Conoce el contenido antes de comprar. Cada pack cuesta $10.000 por separado: el valor normal de los cuatro es $40.000 COP.</p>
-<div class="packs">
-<article class="pack premium">
-<span class="icon">★</span>
-<p class="eyebrow">PACK 01 · DESTACADO</p>
-<h3>Premium Full</h3>
-<p>La biblioteca protagonista: frontend, backend, IA, diseño y mucho más.</p>
-<p>
-<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
-</p>
-<p class="included" data-included>Disponible por separado</p>
-<a class="button secondary" href="pack/premium/Pack-Premium.html">Ver todo el pack Premium Full →</a>
+<div class="checkout-grid">
+<section class="cart-panel" id="packs" aria-labelledby="cart-title">
+<div class="panel-heading">
+<h2 id="cart-title">Esto es todo lo que te llevas</h2>
+<span class="count-pill">4 packs</span>
+</div>
+<article class="cart-item">
+<span class="cart-icon" aria-hidden="true">★</span>
+<div class="cart-description">
+<span class="item-label">✓ LA JOYA DEL COMBO</span>
+<h2>Premium Full</h2>
+<p>Frontend, backend, IA, diseño y más.</p>
+<a href="pack/premium/Pack-Premium.html">Ver qué incluye <span class="sr-only">Premium Full</span> →</a>
+</div>
+<div class="item-price">
+<del data-item-original hidden>$10.000</del>
+<strong data-item-price>$10.000</strong>
+<span>COP</span>
+<small data-item-discount>Precio normal</small>
+</div>
 </article>
-<article class="pack ">
-<span class="icon">Py</span>
-<p class="eyebrow">PACK 02</p>
-<h3>Python</h3>
+<article class="cart-item">
+<span class="cart-icon" aria-hidden="true">Py</span>
+<div class="cart-description">
+<span class="item-label">✓ INCLUIDO</span>
+<h2>Python</h2>
 <p>De los primeros pasos a proyectos con Python.</p>
-<p>
-<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
-</p>
-<p class="included" data-included>Disponible por separado</p>
-<a class="button secondary" href="pack/python/Python.html">Ver todo el pack Python →</a>
-</article>
-<article class="pack ">
-<span class="icon">J</span>
-<p class="eyebrow">PACK 03</p>
-<h3>Java</h3>
-<p>Una ruta de práctica para desarrollar con Java.</p>
-<p>
-<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
-</p>
-<p class="included" data-included>Disponible por separado</p>
-<a class="button secondary" href="pack/java/Java.html">Ver todo el pack Java →</a>
-</article>
-<article class="pack ">
-<span class="icon">&lt;/&gt;</span>
-<p class="eyebrow">PACK 04</p>
-<h3>Web Fullstack</h3>
-<p>Interfaces, servidores y bases de datos en una misma ruta.</p>
-<p>
-<strong>$10.000 COP</strong> <span class="muted">valor individual</span>
-</p>
-<p class="included" data-included>Disponible por separado</p>
-<a class="button secondary" href="pack/desarrollo-web/Desarrollo-Web.html">Ver todo el pack Web Fullstack →</a>
-</article>
+<a href="pack/python/Python.html">Ver qué incluye <span class="sr-only">Python</span> →</a>
 </div>
-</section>
-<section class="wrap section">
-<h2>Del primer clic a empezar a aprender.</h2>
-<div class="steps">
-<article>
-<b>01</b>
-<h3>Explora los packs</h3>
-<p>Revisa los cursos y temarios sin salir de la oferta.</p>
-</article>
-<article>
-<b>02</b>
-<h3>Toma la oferta</h3>
-<p>El botón abre WhatsApp con tu solicitud y el precio vigente.</p>
-</article>
-<article>
-<b>03</b>
-<h3>Recibe tu acceso</h3>
-<p>Coordina el pago y la entrega por WhatsApp. Aprende a tu ritmo, para siempre.</p>
-</article>
+<div class="item-price">
+<del data-item-original hidden>$10.000</del>
+<strong data-item-price>$10.000</strong>
+<span>COP</span>
+<small data-item-discount>Precio normal</small>
 </div>
+</article>
+<article class="cart-item">
+<span class="cart-icon" aria-hidden="true">J</span>
+<div class="cart-description">
+<span class="item-label">✓ INCLUIDO</span>
+<h2>Java</h2>
+<p>Ruta de aprendizaje y práctica con Java.</p>
+<a href="pack/java/Java.html">Ver qué incluye <span class="sr-only">Java</span> →</a>
+</div>
+<div class="item-price">
+<del data-item-original hidden>$10.000</del>
+<strong data-item-price>$10.000</strong>
+<span>COP</span>
+<small data-item-discount>Precio normal</small>
+</div>
+</article>
+<article class="cart-item">
+<span class="cart-icon" aria-hidden="true">&lt;/&gt;</span>
+<div class="cart-description">
+<span class="item-label">✓ INCLUIDO</span>
+<h2>Web Fullstack</h2>
+<p>Interfaces, servidores y bases de datos.</p>
+<a href="pack/desarrollo-web/Desarrollo-Web.html">Ver qué incluye <span class="sr-only">Web Fullstack</span> →</a>
+</div>
+<div class="item-price">
+<del data-item-original hidden>$10.000</del>
+<strong data-item-price>$10.000</strong>
+<span>COP</span>
+<small data-item-discount>Precio normal</small>
+</div>
+</article>
+<p class="cart-footnote" data-allocation>Los cuatro packs forman un único combo.</p>
 </section>
-<section class="wrap section">
-<h2>Tu oferta, sin dudas.</h2>
+<section class="order-summary" aria-labelledby="summary-title">
+<p class="eyebrow">UNA COMPRA. CUATRO PACKS.</p>
+<h2 id="summary-title">Resumen de tu combo</h2>
+<div class="summary-line">
+<span>4 packs × $10.000</span>
+<strong>$40.000</strong>
+</div>
+<div class="summary-line discount-line" data-discount-row hidden>
+<span>Descuento de bienvenida <b>−75%</b>
+</span>
+<strong>−$30.000</strong>
+</div>
+<div class="total-line">
+<div>
+<span>Total por los 4 packs</span>
+<small>Pesos colombianos · pago único</small>
+</div>
+<strong data-price>$40.000 COP</strong>
+</div>
+<p class="saving-note" data-saving>Acceso permanente a los cuatro packs.</p>
+<a class="button" data-buy href="https://wa.me/573026656161">Comprar combo por WhatsApp →</a>
+<p class="checkout-help">Termina tu compra directamente conmigo en WhatsApp. Allí coordinamos el pago y la entrega del acceso.</p>
+<ul class="benefits">
+<li>✓ Los 4 packs completos</li>
+<li>✓ Acceso permanente</li>
+<li>✓ Un único pago, sin mensualidades</li>
+</ul>
+<p class="fine" data-deadline>
+</p>
+</section>
+</div>
+<section class="cart-questions">
+<h2>Todo claro antes de comprar</h2>
 <details>
-<summary>¿Cuándo empiezan las 24 horas?</summary>
-<p>Al entrar por primera vez desde este navegador. El contador sigue aunque cierres la página.</p>
+<summary>¿Debo elegir un pack?</summary>
+<p>No. El combo incluye los cuatro: Premium Full, Python, Java y Web Fullstack. Los enlaces de cada pack solo te permiten consultar su contenido.</p>
 </details>
 <details>
-<summary>¿Qué pasa cuando termina?</summary>
-<p>Cada pack vuelve a $10.000 COP. Los cuatro cuestan $40.000 COP en total.</p>
+<summary>¿Por qué aparece $2.500 en cada pack?</summary>
+<p>Durante la oferta, repartimos el total de $10.000 entre los cuatro packs: $2.500 por pack, un descuento del 75% respecto a su valor normal. La compra es del combo completo.</p>
 </details>
 <details>
-<summary>¿El acceso también dura 24 horas?</summary>
-<p>No. Las 24 horas corresponden al descuento. Tu compra incluye acceso permanente a los cuatro packs.</p>
+<summary>¿Cuánto dura la oferta?</summary>
+<p>24 horas desde tu primera visita en este navegador. No se reinicia al recargar. Cuando termina, el combo vuelve a $40.000 COP: $10.000 por pack. El acceso que compras es permanente.</p>
 </details>
 </section>
 </main>
 <footer class="wrap">
-<p>CreaCoders · Aprende a tu ritmo.</p>
-<p>Oferta de 24 horas desde tu primera visita en este navegador. El plazo se guarda en los datos locales y no se reinicia al recargar. Borrar esos datos o cambiar de navegador elimina el registro.</p>
-<p>Compra y entrega del acceso por WhatsApp: <a href="https://wa.me/573026656161">302 665 6161</a>.</p>
+<p>CreaCoders · WhatsApp <a href="https://wa.me/573026656161">302 665 6161</a>
+</p>
+<p>El plazo se guarda en este navegador. Borrar sus datos o cambiar de navegador elimina el registro.</p>
 </footer>
-<aside class="sticky" aria-label="Comprar por WhatsApp">
+<aside class="sticky" aria-label="Comprar el combo completo">
 <div>
-<strong data-sticky-price>4 packs · $40.000</strong>
+<strong data-sticky-price>4 packs · $40.000 COP</strong>
 <small data-sticky-note>Acceso permanente</small>
 </div>
-<a class="button" data-buy href="https://wa.me/573026656161">Consultar packs →</a>
+<a class="button" data-buy href="https://wa.me/573026656161">Comprar combo por WhatsApp →</a>
 </aside>
 <noscript>
-<p class="wrap">Activa JavaScript para comprobar la oferta de primera visita. Puedes consultar los precios por WhatsApp.</p>
+<p class="wrap">Activa JavaScript para comprobar tu descuento de bienvenida o consulta el combo por WhatsApp.</p>
 </noscript>
 </body>
 </html>
