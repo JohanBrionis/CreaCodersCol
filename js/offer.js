@@ -37,7 +37,7 @@
     all('[data-sticky-note]', el => el.textContent = active ? 'Te quedan ' + clock : 'Acceso permanente · precio normal');
     const message = active ? 'Hola, quiero tomar la oferta de los 4 packs (Premium, Python, Java y Web Fullstack) por $5.000 COP en total, con acceso permanente.' : 'Hola, quiero comprar el combo completo de los 4 packs (Premium, Python, Java y Web Fullstack) por $40.000 COP en total, con acceso permanente.';
     all('[data-buy]', el => {
-      el.textContent = active ? 'Llevarme los 4 por $5.000 →' : 'Comprar combo por WhatsApp →';
+      el.textContent = active ? 'Continuar por WhatsApp →' : 'Comprar combo por WhatsApp →';
       el.href = 'https://wa.me/573026656161?text=' + encodeURIComponent(message);
     });
   }
