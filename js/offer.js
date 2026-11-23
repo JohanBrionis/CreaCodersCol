@@ -1,5 +1,5 @@
 (() => {
-  const KEY = 'creacoders:welcome-offer:v2-5000';
+  const KEY = 'creacoders:welcome-offer:v3-3000';
   const DAY = 24 * 60 * 60 * 1000;
   let started = null;
   try {
