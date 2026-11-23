@@ -16,26 +16,26 @@
   function render() {
     const remaining = started === null ? 0 : Math.max(0, started + DAY - Date.now());
     const active = remaining > 0;
-    const price = active ? '$5.000' : '$40.000';
+    const price = active ? '$3.000' : '$40.000';
     const seconds = Math.ceil(remaining / 1000);
     const clock = [Math.floor(seconds / 3600), Math.floor(seconds % 3600 / 60), seconds % 60].map(n => String(n).padStart(2, '0')).join(':');
     all('[data-price]', el => el.textContent = price + ' COP');
-    all('[data-cart-headline]', el => el.textContent = active ? 'Todo por $5.000.' : 'Todo por $40.000.');
-    all('[data-item-price]', el => el.textContent = active ? '$1.250' : '$10.000');
+    all('[data-cart-headline]', el => el.textContent = active ? 'Todo por $3.000.' : 'Todo por $40.000.');
+    all('[data-item-price]', el => el.textContent = active ? '$750' : '$10.000');
     all('[data-item-original]', el => el.hidden = !active);
-    all('[data-item-discount]', el => el.textContent = active ? '−87,5% en el combo' : 'Precio normal');
+    all('[data-item-discount]', el => el.textContent = active ? '−92,5% en el combo' : 'Precio normal');
     all('[data-discount-row]', el => el.hidden = !active);
-    all('[data-allocation]', el => el.textContent = active ? 'Solo $1.250 por pack dentro del combo. Los 4 se compran juntos por $5.000 COP.' : 'Los 4 packs juntos por $40.000 COP. Acceso permanente.');
+    all('[data-allocation]', el => el.textContent = active ? 'Solo $750 por pack dentro del combo. Los 4 se compran juntos por $3.000 COP.' : 'Los 4 packs juntos por $40.000 COP. Acceso permanente.');
 
     all('[data-offer-title]', el => el.textContent = active ? 'OFERTA ACTIVA · LOS 4 PACKS' : 'LOS 4 PACKS · PRECIO NORMAL');
-    all('[data-saving]', el => el.textContent = active ? 'Valor por separado: $40.000 COP. Ahorras $35.000 (87,5%).' : '$10.000 COP cada pack · $40.000 COP por los cuatro.');
+    all('[data-saving]', el => el.textContent = active ? 'Valor por separado: $40.000 COP. Ahorras $37.000 (92,5%).' : '$10.000 COP cada pack · $40.000 COP por los cuatro.');
     all('[data-timer]', el => el.textContent = active ? 'Termina en ' + clock : started === null ? 'Oferta no disponible sin un registro local válido.' : 'Tu oferta de 24 horas ha terminado.');
     all('[data-deadline]', el => el.textContent = active ? 'Vence el ' + new Date(started + DAY).toLocaleString('es-CO', {dateStyle:'medium', timeStyle:'short'}) + ' (hora de tu dispositivo).' : 'Puedes comprar los packs a su precio normal.');
-    all('[data-activation]', el => el.textContent = active ? '¡Tu oferta de bienvenida está activa! Tienes 24 horas desde tu primera visita: los 4 packs por $5.000 COP.' : 'Cada pack cuesta $10.000 COP. Acceso permanente con un solo pago.');
-    all('[data-included]', el => el.textContent = active ? '✓ Incluido: los 4 por $5.000 COP' : 'Disponible por $10.000 COP');
+    all('[data-activation]', el => el.textContent = active ? '¡Tu oferta de bienvenida está activa! Tienes 24 horas desde tu primera visita: los 4 packs por $3.000 COP.' : 'Cada pack cuesta $10.000 COP. Acceso permanente con un solo pago.');
+    all('[data-included]', el => el.textContent = active ? '✓ Incluido: los 4 por $3.000 COP' : 'Disponible por $10.000 COP');
     all('[data-sticky-price]', el => el.textContent = '4 packs · ' + price + ' COP');
     all('[data-sticky-note]', el => el.textContent = active ? 'Te quedan ' + clock : 'Acceso permanente · precio normal');
-    const message = active ? 'Hola, quiero tomar la oferta de los 4 packs (Premium, Python, Java y Web Fullstack) por $5.000 COP en total, con acceso permanente.' : 'Hola, quiero comprar el combo completo de los 4 packs (Premium, Python, Java y Web Fullstack) por $40.000 COP en total, con acceso permanente.';
+    const message = active ? 'Hola, quiero tomar la oferta de los 4 packs (Premium, Python, Java y Web Fullstack) por $3.000 COP en total, con acceso permanente.' : 'Hola, quiero comprar el combo completo de los 4 packs (Premium, Python, Java y Web Fullstack) por $40.000 COP en total, con acceso permanente.';
     all('[data-buy]', el => {
       el.textContent = active ? 'Continuar por WhatsApp →' : 'Comprar combo por WhatsApp →';
       el.href = 'https://wa.me/573026656161?text=' + encodeURIComponent(message);
